@@ -281,7 +281,11 @@ iframe {
 
 /* -------- Page Heasers -------- */
 .page-header {
+  margin: 0;
   padding: 23vh 0 13.75vh; }
+  .navbar-default.navbar-fixed + .page-header.background-bg .overlay {
+    padding: 6.5em 0 1.5em;
+  }
   .page-header.background-bg {
     padding: 0; }
     .page-header.background-bg.style-01 .overlay, .page-header.background-bg.style-02 .overlay {
@@ -299,7 +303,7 @@ iframe {
       color: #fff;
       font-size: 2.125em;
       font-weight: 300;
-      margin-bottom: 0; }
+      margin: 0; }
     .page-header.background-bg.style-01 p, .page-header.background-bg.style-02 p {
       color: #fff; }
   .page-header p {
@@ -319,6 +323,9 @@ iframe {
       color: #fff; }
     .page-header .breadcrumb .breadcrumb-item + .breadcrumb-item:before {
       content: '-'; }
+      .navbar-default.navbar-fixed + .page-header .breadcrumb {
+        margin-top: 10px;
+      }
   .page-header.style-02 .header-texts {
     max-width: 560px;
     margin: 0 auto;
@@ -1205,6 +1212,14 @@ ul.cart-list > li.total > .btn{
     padding: 10px 15px;
 }
 
+nav.navbar .navbar-brand {
+  height: auto;
+  padding: 5px 0;
+}
+nav.navbar.bootsnav.navbar-fixed{
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
 @media (min-width: 1024px) {
     /* Navbar General ------*/
     nav.navbar ul.nav > li > a{
@@ -1216,17 +1231,11 @@ ul.cart-list > li.total > .btn{
         margin-top: 0;
     }
     
-    nav.navbar .navbar-brand img.logo{
-        width: 50px;
-    }
 
     nav.navbar .navbar-brand{
         margin-top: 0;
     }
     
-    nav.navbar .navbar-brand img.logo{
-        width: 50px;
-    }
     
     nav.navbar li.dropdown ul.dropdown-menu{
         border-top: solid 5px;
@@ -1261,7 +1270,7 @@ ul.cart-list > li.total > .btn{
     
     /* Navbar Transparent & Fixed ------*/
     nav.navbar.bootsnav.navbar-transparent.white{
-        background-color: rgba(255,255,255,0.3);
+        background-color: rgba(255,255,255,1);
         border-bottom: solid 1px #bbb;
     }
     
@@ -1284,7 +1293,7 @@ ul.cart-list > li.total > .btn{
     nav.navbar.bootsnav.navbar-transparent.white .attr-nav > ul > li > a,
     nav.navbar.bootsnav.navbar-transparent.white ul.nav > li > a,
     nav.navbar.bootsnav.no-background.white ul.nav > li > a{
-        color: #fff;
+        color: #343434;
     }
     
     nav.navbar.bootsnav.navbar-transparent.dark .attr-nav > ul > li > a,

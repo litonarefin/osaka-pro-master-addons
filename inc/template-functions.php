@@ -231,7 +231,10 @@ function osaka_light_brand_logo(){ ?>
                 $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
                 
                 if( has_custom_logo() ){
-                    echo '<a class="navbar-brand" href="' . esc_url(home_url('/')) .'"><img src="'. esc_url( $logo[0] ) . '" alt="' . esc_attr( get_bloginfo('name') ) . '"></a>';
+                    echo '<a class="navbar-brand" href="' . esc_url(home_url('/')) .'">
+                    <img class="logo logo-display" src="'. esc_url( $logo[0] ) . '" alt="' . esc_attr( get_bloginfo('name') ) . '">
+                    <img class="logo logo-scrolled" src="'. esc_url( $logo[0] ) . '" alt="' . esc_attr( get_bloginfo('name') ) . '">
+                    </a>';
                 } else{ ?>
 
                     <a class="navbar-brand hidden-xs site-title" href="<?php echo esc_url( home_url('/') ); ?>" title="<?php esc_html(bloginfo( 'name' )); ?> - <?php esc_html(bloginfo( 'description' )); ?>">

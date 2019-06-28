@@ -166,8 +166,8 @@
 	$(document).ready(function() {
 		"use strict";
 
-		// var stickyheight = $('#wpadminbar').height();
-		// $('.logged-in .masthead.sticky').css('top', (stickyheight) * 1);		
+		// var stickyheight = $('.navbar.navbar-default.navbar-fixed').height();
+		// $('.navbar.navbar-default.navbar-fixed + section').css('margin-top', (stickyheight) * 1);		
 
 	    Osaka.bannerBG();
 	    Osaka.carousel();

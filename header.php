@@ -22,9 +22,7 @@ osaka_light_theme_options();
 
 <body <?php body_class(); ?>>
 
-    <header class="masthead masthead-02">
-        <div class="container">
-        
+
         <?php //osaka_light_brand_logo();?>
             <!-- <nav class="navbar navbar-expand-md m-0">
                 
@@ -53,7 +51,7 @@ osaka_light_theme_options();
                 </div>
             </nav> -->
 
-            <nav class="navbar navbar-default navbar-fixed navbar-transparent dark bootsnav">
+            <nav class="navbar navbar-default navbar-fixed navbar-transparent white bootsnav">
 
                 <div class="container">      
                     <!-- Start Header Navigation -->
@@ -61,12 +59,8 @@ osaka_light_theme_options();
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <a class="navbar-brand" href="#brand">
-                            <?php osaka_light_brand_logo();?>
-                            <img src="images/brand/logo-white.png" class="logo logo-display" alt="">
-                            <img src="images/brand/logo-black.png" class="logo logo-scrolled" alt="">
 
-                        </a>
+                        <?php osaka_light_brand_logo();?>
                     </div>
                     <!-- End Header Navigation -->
 
@@ -74,80 +68,75 @@ osaka_light_theme_options();
                     <div class="collapse navbar-collapse" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 
-                <li><a href="#">Home</a></li>                    
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                
-                <li class="dropdown megamenu-fw">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Megamenu</a>
-                    <ul class="dropdown-menu megamenu-content" role="menu">
-                        <li>
-                            <div class="row">
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Title Menu One</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                            </ul>
-                                        </div>
-                                    </div><!-- end col-3 -->
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Title Menu Two</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                            </ul>
-                                        </div>
-                                    </div><!-- end col-3 -->
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Title Menu Three</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>    
-                                    <div class="col-menu col-md-3">
-                                        <h6 class="title">Title Menu Four</h6>
-                                        <div class="content">
-                                            <ul class="menu-col">
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                                <li><a href="#">Custom Menu</a></li>
-                                            </ul>
-                                        </div>
-                                    </div><!-- end col-3 -->
-                                </div><!-- end row -->
-                        </li>
-                    </ul>
-                </li>
+                            <li><a href="#">Home</a></li>                    
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Services</a></li>
 
-                
-                <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdowns</a>
-                        <ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
-                            <li><a href="#">Custom Menu</a></li>
-                            <li><a href="#">Custom Menu</a></li>
+                            <li class="dropdown megamenu-fw">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Megamenu</a>
+                                <ul class="dropdown-menu megamenu-content" role="menu">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-menu col-md-3">
+                                                <h6 class="title">Title Menu One</h6>
+                                                <div class="content">
+                                                    <ul class="menu-col">
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div><!-- end col-3 -->
+                                            <div class="col-menu col-md-3">
+                                                <h6 class="title">Title Menu Two</h6>
+                                                <div class="content">
+                                                    <ul class="menu-col">
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div><!-- end col-3 -->
+                                            <div class="col-menu col-md-3">
+                                                <h6 class="title">Title Menu Three</h6>
+                                                <div class="content">
+                                                    <ul class="menu-col">
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>    
+                                            <div class="col-menu col-md-3">
+                                                <h6 class="title">Title Menu Four</h6>
+                                                <div class="content">
+                                                    <ul class="menu-col">
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                        <li><a href="#">Custom Menu</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div><!-- end col-3 -->
+                                        </div><!-- end row -->
+                                    </li>
+                                </ul>
+                            </li>
+
+
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sub Menu</a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdowns</a>
                                 <ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
                                     <li><a href="#">Custom Menu</a></li>
                                     <li><a href="#">Custom Menu</a></li>
@@ -156,29 +145,32 @@ osaka_light_theme_options();
                                         <ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
                                             <li><a href="#">Custom Menu</a></li>
                                             <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sub Menu</a>
+                                                <ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                    <li><a href="#">Custom Menu</a></li>
+                                                </ul>
+                                            </li>
                                             <li><a href="#">Custom Menu</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Custom Menu</a></li>
+                                    <li><a href="#">Custom Menu</a></li>
+                                    <li><a href="#">Custom Menu</a></li>
+                                    <li><a href="#">Custom Menu</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Custom Menu</a></li>
-                            <li><a href="#">Custom Menu</a></li>
-                            <li><a href="#">Custom Menu</a></li>
-                            <li><a href="#">Custom Menu</a></li>
-                        </ul>
-                    </li>
-                    
-                <li><a href="#">Contact Us</a></li>
+
+                            <li><a href="#">Contact Us</a></li>
 
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div>   
             </nav>            
 
-        </div>
-    </header>
 
 
 <?php osaka_light_header_banner();?>
