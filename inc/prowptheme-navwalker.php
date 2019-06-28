@@ -100,9 +100,14 @@ class Nav_Walker extends Walker_Nav_Menu {
         
         $classes[] = ($item->current || $item->current_item_ancestor) ? 'active' : '';
         $classes[] = 'menu-item-'.$item->ID;
+        
         if ($depth && $args->has_children) {
             $classes[] = 'dropdown-submenu';
         }
+
+        // if ($depth ==2) {
+        //     $classes[] = "litonarefin";
+        // }
 
         if ($hasFeaturedImage) {
             array_push($classes, 'featured-image');
@@ -118,7 +123,12 @@ class Nav_Walker extends Walker_Nav_Menu {
         $id = apply_filters('nav_menu_item_id', 'menu-item-'.$item->ID, $item, $args);
         $id = strlen($id) ? ' id="'.esc_attr($id).'"' : '';
 
-        $output .= $indent.'<li'.$id.$value.$class_names.$li_attributes.'>';
+        // echo ;
+        // if ($depth ==1 && $hasMegaMenu ) {
+        //     $output .= $indent.'<li>';
+        // } else{
+            $output .= $indent.'<li'.$id.$value.$class_names.$li_attributes.'>';
+        // }
 
         $attributes = !empty($item->attr_title) ? ' title="'.esc_attr($item->attr_title).'"' : '';
         $attributes .= !empty($item->target) ? ' target="'.esc_attr($item->target).'"' : '';
