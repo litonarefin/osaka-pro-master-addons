@@ -21,9 +21,10 @@ class Nav_Walker extends Walker_Nav_Menu {
     public function start_lvl(&$output, $depth = 0, $args = array()){
         $indent = str_repeat("\t", $depth);
         $submenu = ($depth > 0) ? ' sub-menu' : '';
+
         if ($this->megaMenuID){            
             // $output .= "\n$indent<ul class=\"dropdown-menu$submenu megamenu-content depth_$depth\" >\n<li>\n\n";
-            $output .= "\n$indent<ul class=\"dropdown-menu$submenu megamenu-content depth_$depth\" >\n<div class=\"row\">\n";
+            $output .= "\n$indent<ul class=\"dropdown-menu$submenu megamenu-content depth_$depth\" >\n\n";
             // $output .= "\n$indent<ul class=\"dropdown-menu$submenu megamenu-content depth_$depth\" >\n<li>\n<div class=\"row\">\n";
         } else{
             $output .= "\n$indent<ul class=\"dropdown-menu$submenu depth_$depth\" >\n";
@@ -31,7 +32,7 @@ class Nav_Walker extends Walker_Nav_Menu {
 
         if ($this->megaMenuID != 0 && $depth == 0) {
             // $output .= "<li><ul>\n";
-            $output .= "<div class=\"col-menu col-md-3\">\n";
+            $output .= "<div class=\"row\">\n<div class=\"col-menu col-md-3\">\n";
             // $output .= "<li><div class=\"row\">\n";
         }
         
@@ -48,6 +49,16 @@ class Nav_Walker extends Walker_Nav_Menu {
     }
 
     public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0){
+        
+        if ($this->megaMenuID != 0 && $this->megaMenuID === intval($item->menu_item_parent)) {
+            $this->count++;
+            if ($this->count > 4) {
+                $output .= "</div><div class=\"col-menu col-md-3\">\n";
+                $this->count = 1;
+            }
+        } else {
+            $this->megaMenuID = 0;
+        }
 
         $hasMegaMenu = get_post_meta( $item->ID, 'menu-item-mm-megamenu', true );
         $hasColumnDivider = get_post_meta( $item->ID, 'menu-item-mm-column-divider', true );
@@ -62,9 +73,9 @@ class Nav_Walker extends Walker_Nav_Menu {
 
         $classes = empty($item->classes) ? array() : (array) $item->classes;
 
-        if ($this->megaMenuID != 0 && $this->megaMenuID != intval($item->menu_item_parent) && $depth == 0) {
-            $this->megaMenuID = 0;
-        }
+        // if ($this->megaMenuID != 0 && $this->megaMenuID != intval($item->menu_item_parent) && $depth == 0) {
+        //     $this->megaMenuID = 0;
+        // }
 
         // $column_divider = array_search('column-divider', $classes);
         if ($hasColumnDivider) {
