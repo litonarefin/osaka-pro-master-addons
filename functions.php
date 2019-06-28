@@ -258,9 +258,15 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/breadcrumbs.php';
 require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
-require get_template_directory() . '/inc/navwalker.php';
+// require get_template_directory() . '/inc/navwalker.php';
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require get_template_directory() . '/inc/required-plugins.php';
+// require get_template_directory() . '/inc/mega-menu.php';
+
+require get_template_directory() . '/inc/walker-nav-menu-edit.php';
+require get_template_directory() . '/inc/prowptheme-navwalker.php';
+require get_template_directory() . '/inc/megamenu-custom-fields.php';
+
 
 if ( defined( 'JETPACK__VERSION' ) ) { require get_template_directory() . '/inc/jetpack.php'; }
 if ( class_exists( 'WooCommerce' ) ) { require get_template_directory() . '/inc/woocommerce.php'; }
