@@ -264,13 +264,7 @@ require_once(get_template_directory() . '/inc/megamenu/dom-helper.php');
 require get_template_directory() . '/inc/megamenu/nav_walker.php';
 require get_template_directory() . '/inc/megamenu/menu_options.php';
 
-
-// require get_template_directory() . '/inc/mega-menu.php';
-
-// require get_template_directory() . '/inc/walker-nav-menu-edit.php';
-// require get_template_directory() . '/inc/prowptheme-navwalker.php';
-// require get_template_directory() . '/inc/megamenu-custom-fields.php';
-
+require get_template_directory() . '/inc/elementor.php';
 
 if ( defined( 'JETPACK__VERSION' ) ) { require get_template_directory() . '/inc/jetpack.php'; }
 if ( class_exists( 'WooCommerce' ) ) { require get_template_directory() . '/inc/woocommerce.php'; }
