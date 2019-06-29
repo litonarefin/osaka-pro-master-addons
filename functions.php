@@ -258,14 +258,20 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/breadcrumbs.php';
 require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
-// require get_template_directory() . '/inc/navwalker.php';
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require get_template_directory() . '/inc/required-plugins.php';
+// require get_template_directory() . '/inc/navwalker.php';
+
+require_once(get_template_directory() . '/inc/megamenu/dom-helper.php');
+require get_template_directory() . '/inc/megamenu/nav_walker.php';
+require get_template_directory() . '/inc/megamenu/menu_options.php';
+
+
 // require get_template_directory() . '/inc/mega-menu.php';
 
-require get_template_directory() . '/inc/walker-nav-menu-edit.php';
-require get_template_directory() . '/inc/prowptheme-navwalker.php';
-require get_template_directory() . '/inc/megamenu-custom-fields.php';
+// require get_template_directory() . '/inc/walker-nav-menu-edit.php';
+// require get_template_directory() . '/inc/prowptheme-navwalker.php';
+// require get_template_directory() . '/inc/megamenu-custom-fields.php';
 
 
 if ( defined( 'JETPACK__VERSION' ) ) { require get_template_directory() . '/inc/jetpack.php'; }
@@ -307,3 +313,54 @@ if(!( function_exists('osaka_light_wp_add_editor_styles') )){
 
 }
 
+
+
+
+
+/* Additional Functions*/
+
+/*
+ * Helper - expand allowed tags()
+ * Source: https://gist.github.com/adamsilverstein/10783774
+*/
+function rooten_allowed_tags() {
+	$allowed_tag = wp_kses_allowed_html( 'post' );
+	// iframe
+	$allowed_tag['iframe'] = array(
+		'src'             => array(),
+		'height'          => array(),
+		'width'           => array(),
+		'frameborder'     => array(),
+		'allowfullscreen' => array(),
+	); 
+	return $allowed_tag;
+}
+
+
+// set custom menu walker for get facility for megamenu style and all others benefit from here.
+add_filter('wp_nav_menu_args', function($args) {
+    if (empty($args['walker'])) {
+        $args['walker'] = new rooten_menu_walker;
+    }
+    return $args; }
+);
+
+
+/* Admin Styles and Scripts */
+function osaka_pro_admin_style() {
+	wp_register_style( 'admin-setting', get_template_directory_uri() . '/inc/megamenu/css/admin-settings.css' );
+	wp_enqueue_style( 'admin-setting' );
+}
+add_action( 'admin_enqueue_scripts', 'osaka_pro_admin_style' );
+
+
+/**
+ * Admin related scripts
+ * @return [type] [description]
+ */
+function osaka_pro_admin_script() {
+	wp_register_script('admin-setting', get_template_directory_uri() . '/inc/megamenu/js/admin-menu.js', array( 'jquery' ), OSAKA_LIGHT_VER, true);
+
+	wp_enqueue_script('admin-setting');
+}
+add_action( 'admin_enqueue_scripts', 'osaka_pro_admin_script' );

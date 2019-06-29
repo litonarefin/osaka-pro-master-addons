@@ -1,5 +1,5 @@
 /*!
-Theme Name: Osaka Light
+Theme Name: Osaka Pro
 Theme URI: https://prowptheme.com/themes/osaka-gutenberg-wordpress-theme/
 Author: Liton Arefin
 Author URI: https://prowptheme.com
@@ -851,3 +851,15 @@ object {
 
 .error-banner .btn-container {
   margin: 53px 0 45px; }
+
+
+
+/* navbar style */
+.tm-header .bdt-navbar-nav > li > a {
+  font-size: 14px;
+}
+
+.tm-header .bdt-navbar-dropdown-nav>li>a, 
+.tm-header .bdt-navbar-dropdown-nav .bdt-nav-sub a {
+  font-size: 14px;
+}

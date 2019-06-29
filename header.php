@@ -66,32 +66,40 @@ osaka_light_theme_options();
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse">
-                        
-                        <!-- <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp"> -->
-                    <?php
-                        if( has_nav_menu('main-menu')){
-                            wp_nav_menu( array(
-                                'theme_location'    => 'main-menu',
-                                'depth'             => 3,
-                                'container'         => false,
-                                'container_class'   => '',
-                                'menu_class'        => 'nav navbar-nav navbar-right',
-                                'menu_id'           => 'navbar-menu',
-                                // 'walker'            => new ProWPTheme\Nav_Walker(),
-                                'walker'            => new ProWPTheme\Nav_Walker(),
-                                // 'fallback_cb'       => 'osaka_light_Navwalker::fallback',
-                            ) );
-                        }
-                    ?>
 
+
+
+                    <?php
+
+                        if(has_nav_menu('main-menu')) {
+                            $navbar = wp_nav_menu( array(
+                              'theme_location' => 'main-menu',
+                              'container'      => false,
+                              'items_wrap'     => '<ul id="%1$s" class="%2$s" bdt-nav>%3$s</ul>',
+                              'menu_id'        => 'nav',
+                              'menu_class'     => 'nav navbar-nav navbar-right',
+                              'echo'           => true,
+                              'before'         => '',
+                              'after'          => '',
+                              'link_before'    => '',
+                              'link_after'     => '',
+                              'depth'          => 0,
+                              'parent_id'      => 'main-menu',
+                              )
+                            ); 
                             
+                            $primary_menu = new rooten_nav_dom($navbar);
+                            echo  $primary_menu->proccess();
+                          }
+
+                      ?>
+
 
                         <!-- </ul> -->
 
                     </div><!-- /.navbar-collapse -->
                 </div>   
             </nav>            
-
 
 
 <?php osaka_light_header_banner();?>
