@@ -24,7 +24,7 @@ class Master_Addons_Upgrade_Pro extends Widget_Base{
 	}
 
 	public function get_icon() {
-		return 'ma-el-icon eicon-heading';
+		return 'ma-el-icon eicon-price-table';
 	}
 
 	public function get_categories() {

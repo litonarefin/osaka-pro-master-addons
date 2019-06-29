@@ -12,6 +12,21 @@ global $osaka_light_options;
 $copyright = wp_kses_post($osaka_light_options['copyright_text']);
 ?>
 
+
+<div id="fomo" class="is-visible">
+  <img src="" class="product_image">
+  <div class="wrapper">
+    <div class="buyer"><span class="name"></span>Someone in <span class="location"></span> Purchased</div>
+    <a href="#" target="_blank" class="product_name"></a>
+    <div class="time">
+      <span class="number"></span>
+      <span class="type"></span> ago
+    </div>
+  </div>
+</div>
+
+
+
     <footer class="site-footer black-bg">
         <div class="container">
             <div class="content">
