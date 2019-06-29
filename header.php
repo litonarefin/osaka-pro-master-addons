@@ -51,12 +51,12 @@ osaka_light_theme_options();
                 </div>
             </nav> -->
 
-            <nav class="navbar navbar-default navbar-fixed navbar-transparent dark bootsnav">
+            <nav class="navbar navbar-fixed navbar-transparent navbar-expand-md dark bootsnav">
 
-                <div class="container">      
+                <div class="container pwpt-navbar-container">      
                     <!-- Start Header Navigation -->
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-main-menu">
                             <i class="fa fa-bars"></i>
                         </button>
 
@@ -69,26 +69,44 @@ osaka_light_theme_options();
 
                       <?php
 
-                          if(has_nav_menu('main-menu')) {
-                              $navbar = wp_nav_menu( array(
-                                'theme_location' => 'main-menu',
-                                'container'      => false,
-                                'items_wrap'     => '<ul id="%1$s" class="%2$s" pwpt-nav>%3$s</ul>',
-                                'menu_id'        => 'main-menu',
-                                'menu_class'     => 'pwpt-navbar-nav nav navbar-nav navbar-right',
-                                'echo'           => true,
-                                'before'         => '',
-                                'after'          => '',
-                                'link_before'    => '',
-                                'link_after'     => '',
-                                'depth'          => 0,
-                                // 'parent_id'      => 'tmMainMenu',
-                                )
-                              ); 
+                          // if(has_nav_menu('main-menu')) {
+                          //     $navbar = wp_nav_menu( array(
+                          //       'theme_location' => 'main-menu',
+                          //       'container'      => false,
+                          //       'items_wrap'     => '<ul id="%1$s" class="%2$s" pwpt-nav>%3$s</ul>',
+                          //       'menu_id'        => 'nav',
+                          //       'menu_class'     => 'pwpt-navbar-nav nav navbar-nav navbar-right',
+                          //       'echo'           => true,
+                          //       'before'         => '',
+                          //       'after'          => '',
+                          //       'link_before'    => '',
+                          //       'link_after'     => '',
+                          //       'depth'          => 0,
+                          //       // 'parent_id'      => 'tmMainMenu',
+                          //       )
+                          //     ); 
                               
-                              $primary_menu = new rooten_nav_dom($navbar);
-                              echo  $primary_menu->proccess();
-                            }
+                          //     $primary_menu = new rooten_nav_dom($navbar);
+                          //     echo  $primary_menu->proccess();
+                          //   }
+
+                          $navbar = wp_nav_menu( array(
+                            'theme_location' => 'main-menu',
+                            'container'      => false,
+                            'menu_id'        => 'nav',
+                            'menu_class'     => 'pwpt-navbar-nav',
+                            'echo'           => false,
+                            'before'         => '',
+                            'after'          => '',
+                            'link_before'    => '',
+                            'link_after'     => '',
+                            'depth'          => 0,
+                            'parent_id'      => 'tmMainMenu',
+                            )
+                          );
+
+                          $primary_menu = new rooten_nav_dom($navbar);
+                          echo  $primary_menu->proccess();
 
                         ?>
 

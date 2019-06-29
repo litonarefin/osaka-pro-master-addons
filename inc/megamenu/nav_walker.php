@@ -53,6 +53,7 @@ class rooten_menu_walker extends Walker_Nav_Menu {
         }      
         if($item->full_width){
               $data['full_width'] = $item->full_width;
+              $classes[] = 'full_width';
         } elseif($item->style_position) {
             if ($item->style_position == 'bottom-left') {
                 $data_uk_dropdown = (is_rtl()) ? 'bottom-right' : 'bottom-left';  

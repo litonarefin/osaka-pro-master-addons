@@ -87,7 +87,6 @@ if(!( function_exists('osaka_light_pagination') )){
 
 
 
-
 function osaka_light_read_more(){
     global $osaka_light_options;
 
@@ -233,7 +232,6 @@ function osaka_light_brand_logo(){ ?>
                 if( has_custom_logo() ){
                     echo '<a class="navbar-brand" href="' . esc_url(home_url('/')) .'">
                     <img class="logo logo-display" src="'. esc_url( $logo[0] ) . '" alt="' . esc_attr( get_bloginfo('name') ) . '">
-                    <img class="logo logo-scrolled" src="'. esc_url( $logo[0] ) . '" alt="' . esc_attr( get_bloginfo('name') ) . '">
                     </a>';
                 } else{ ?>
 

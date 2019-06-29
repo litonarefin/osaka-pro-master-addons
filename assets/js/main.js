@@ -167,7 +167,12 @@
 		"use strict";
 
 		// var stickyheight = $('.navbar.navbar-default.navbar-fixed').height();
-		// $('.navbar.navbar-default.navbar-fixed + section').css('margin-top', (stickyheight) * 1);		
+		// $('.navbar.navbar-default.navbar-fixed + section').css('margin-top', (stickyheight) * 1);	
+
+		var containerwidth = $('.navbar .container').width();
+		$('.full_width .pwpt-navbar-dropdown').css('width', (containerwidth) * 1);	
+
+
 
 	    Osaka.bannerBG();
 	    Osaka.carousel();
