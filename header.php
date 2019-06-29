@@ -74,7 +74,7 @@ osaka_light_theme_options();
                                 'theme_location' => 'main-menu',
                                 'container'      => false,
                                 'items_wrap'     => '<ul id="%1$s" class="%2$s" pwpt-nav>%3$s</ul>',
-                                'menu_id'        => 'nav',
+                                'menu_id'        => 'main-menu',
                                 'menu_class'     => 'pwpt-navbar-nav nav navbar-nav navbar-right',
                                 'echo'           => true,
                                 'before'         => '',
@@ -82,7 +82,7 @@ osaka_light_theme_options();
                                 'link_before'    => '',
                                 'link_after'     => '',
                                 'depth'          => 0,
-                                'parent_id'      => 'tmMainMenu',
+                                // 'parent_id'      => 'tmMainMenu',
                                 )
                               ); 
                               

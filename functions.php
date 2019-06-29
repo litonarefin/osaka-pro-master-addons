@@ -218,12 +218,9 @@ function osaka_light_scripts() {
 	wp_enqueue_style( 'et-line', OSAKA_LIGHT_CSS . 'et-line.css');
 	wp_enqueue_style( 'themify-icons', OSAKA_LIGHT_CSS . 'themify-icons.css');
 	wp_enqueue_style( 'bootstrap', OSAKA_LIGHT_CSS . 'bootstrap.min.css');
-
     // wp_enqueue_style( 'bootstrap', OSAKA_LIGHT_CSS . 'bootstrap.min.css', array(), OSAKA_LIGHT_VER );
-    /*Animited CSS*/
     wp_enqueue_style( 'animate', OSAKA_LIGHT_CSS . 'animate.css', array(), OSAKA_LIGHT_VER );
     wp_enqueue_style( 'bootsnav', OSAKA_LIGHT_CSS . 'bootsnav.css', array(), OSAKA_LIGHT_VER );
-
 	// wp_enqueue_style( 'osaka-light-header', OSAKA_LIGHT_CSS . 'header.css');
 	wp_enqueue_style( 'osaka-light-megamenu', OSAKA_LIGHT_CSS . 'megamenu.css');
 	wp_enqueue_style( 'osaka-light-themes', OSAKA_LIGHT_CSS . 'themes.css');
