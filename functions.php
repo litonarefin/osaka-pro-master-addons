@@ -220,7 +220,7 @@ function osaka_light_scripts() {
 	wp_enqueue_style( 'bootstrap', OSAKA_LIGHT_CSS . 'bootstrap.min.css');
     // wp_enqueue_style( 'bootstrap', OSAKA_LIGHT_CSS . 'bootstrap.min.css', array(), OSAKA_LIGHT_VER );
     wp_enqueue_style( 'animate', OSAKA_LIGHT_CSS . 'animate.css', array(), OSAKA_LIGHT_VER );
-    wp_enqueue_style( 'bootsnav', OSAKA_LIGHT_CSS . 'bootsnav.css', array(), OSAKA_LIGHT_VER );
+    // wp_enqueue_style( 'bootsnav', OSAKA_LIGHT_CSS . 'bootsnav.css', array(), OSAKA_LIGHT_VER );
 	// wp_enqueue_style( 'osaka-light-header', OSAKA_LIGHT_CSS . 'header.css');
 	wp_enqueue_style( 'osaka-light-megamenu', OSAKA_LIGHT_CSS . 'megamenu.css');
 	wp_enqueue_style( 'osaka-light-themes', OSAKA_LIGHT_CSS . 'themes.css');
@@ -231,7 +231,7 @@ function osaka_light_scripts() {
 
 	// JS
 	wp_enqueue_script( 'bootstrap', OSAKA_LIGHT_JS . 'bootstrap.js', array('jquery'), OSAKA_LIGHT_VER, true );
-	wp_enqueue_script( 'bootsnav', OSAKA_LIGHT_JS . 'bootsnav.js', array('jquery'), OSAKA_LIGHT_VER, true );
+	// wp_enqueue_script( 'bootsnav', OSAKA_LIGHT_JS . 'bootsnav.js', array('jquery'), OSAKA_LIGHT_VER, true );
 	// wp_enqueue_script( 'bootstrap-select', OSAKA_LIGHT_JS . 'bootstrap-select.js', array('jquery'), '', true );
 	// wp_enqueue_script( 'owl-carousel', OSAKA_LIGHT_JS . 'owl.carousel.js', array('jquery'), '', true );
 	// wp_enqueue_script( 'jquery-validate', OSAKA_LIGHT_JS . 'jquery.validate.js', array('jquery'), '', true );

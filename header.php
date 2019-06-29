@@ -65,7 +65,7 @@ osaka_light_theme_options();
                     <!-- End Header Navigation -->
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse">                        
+                    <div class="collapse navbar-collapse" id="navbar-main-menu">                        
 
                       <?php
 

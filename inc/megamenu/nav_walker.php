@@ -26,7 +26,7 @@ class rooten_menu_walker extends Walker_Nav_Menu {
         $classes = array();
          $data['style'] = '';
         if($depth == 0 && $args->walker->has_children){
-            $classes[] ='pwpt-parent';
+            $classes[] ='pwpt-parent dropdown megamenu-fw';
             $data['data-menu-columns'] = $item->columns ? $item->columns : 1;
             $classes[] = 'has_columns';
            if($item->dropdown_background){
