@@ -26,7 +26,7 @@ class rooten_menu_walker extends Walker_Nav_Menu {
         $classes = array();
          $data['style'] = '';
         if($depth == 0 && $args->walker->has_children){
-            $classes[] ='bdt-parent';
+            $classes[] ='pwpt-parent';
             $data['data-menu-columns'] = $item->columns ? $item->columns : 1;
             $classes[] = 'has_columns';
            if($item->dropdown_background){
@@ -35,10 +35,10 @@ class rooten_menu_walker extends Walker_Nav_Menu {
         }
        
         if($item->current || $item->current_item_parent || $item->current_item_ancestor) {
-            $classes[] = ' bdt-active';
+            $classes[] = ' pwpt-active';
         }
         if($item->dropdown_child && $depth > 0) {
-            $classes[] = ' bdt-parent sub-dropdown';
+            $classes[] = ' pwpt-parent sub-dropdown';
         }
         // set id
         $data['data-id'] = $item->ID;
@@ -92,9 +92,9 @@ class rooten_menu_walker extends Walker_Nav_Menu {
 
         $classes     = trim(preg_replace('/menu-item(.+)/', '', implode(' ', $classes)));
         if (preg_match('/\.(gif|png|jpg|svg)$/i', $item->icon)) {
-            $icon = "<img class=\"bdt-responsive-height bdt-margin-small-right\" src=\"{$item->icon}\" alt=\"{$item->title}\" />";
+            $icon = "<img class=\"pwpt-responsive-height pwpt-margin-small-right\" src=\"{$item->icon}\" alt=\"{$item->title}\" />";
         } elseif ($item->icon) {
-            $icon = "<span class=\"bdt-margin-small-right\" bdt-icon=\"icon: {$item->icon}\"></span>";
+            $icon = "<span class=\"pwpt-margin-small-right\" pwpt-icon=\"icon: {$item->icon}\"></span>";
         } else {
             $icon = '';
         }

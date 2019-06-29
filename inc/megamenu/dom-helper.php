@@ -53,7 +53,7 @@ class rooten_nav_dom {
 
         $logo[] = '<a href="'.esc_url(home_url('/')).'" class="'.$logo_mode.'" title="'.get_bloginfo( 'name' ).'">';
             if ($logo_src) {
-               $logo[] = '<img src="'. esc_url($logo_src) .'" class="bdt-responsive-height" alt="'.get_bloginfo( 'name' ).'"'.$width.' />';
+               $logo[] = '<img src="'. esc_url($logo_src) .'" class="pwpt-responsive-height" alt="'.get_bloginfo( 'name' ).'"'.$width.' />';
             }
             else {
                 $logo[] = get_bloginfo( 'name' );
@@ -72,7 +72,7 @@ class rooten_nav_dom {
     **/
     $subs  =  $li->find('.sub-dropdown ul');   
     foreach ($subs as $sub) {
-        $sub->addClass("bdt-nav-sub");
+        $sub->addClass("pwpt-nav-sub");
     } 
     /**
     **  divide menu
@@ -124,28 +124,28 @@ class rooten_nav_dom {
 
         $li->attr('data-style','');
         if( (int) $li->attr('full_width') == 1){            
-            $style .=' bdt-dropdown="pos: bottom-justify; boundary: .bdt-navbar-container>.bdt-container>nav; boundary-align: true"';
+            $style .=' pwpt-dropdown="pos: bottom-justify; boundary: .pwpt-navbar-container>.pwpt-container>nav; boundary-align: true"';
             // append dropdown divs
-            $li->append(sprintf('<div  class="bdt-navbar-dropdown"%s><div class="bdt-navbar-dropdown-grid bdt-child-width-1-%d@s" bdt-grid=""></div></div>', $style, $columns));
-            $div = $li->first('div.bdt-navbar-dropdown div.bdt-navbar-dropdown-grid');
+            $li->append(sprintf('<div  class="pwpt-navbar-dropdown"%s><div class="pwpt-navbar-dropdown-grid pwpt-child-width-1-%d@s" pwpt-grid=""></div></div>', $style, $columns));
+            $div = $li->first('div.pwpt-navbar-dropdown div.pwpt-navbar-dropdown-grid');
 
         } elseif( (int) $li->attr('full_width') == 2){            
-            $style .=' bdt-drop="pos: bottom-justify; boundary: !.bdt-navbar-container; boundary-align: true; animation: bdt-animation-slide-top-small; offset: -10"';
+            $style .=' pwpt-drop="pos: bottom-justify; boundary: !.pwpt-navbar-container; boundary-align: true; animation: pwpt-animation-slide-top-small; offset: -10"';
             // append dropdown divs
-            $li->append(sprintf('<div  class="bdt-navbar-dropdown"%s><div class="bdt-container"><div class="bdt-navbar-dropdown-grid bdt-child-width-1-%d@s" bdt-grid=""></div></div></div>', $style, $columns));
-            $div = $li->first('div.bdt-navbar-dropdown div.bdt-container div.bdt-navbar-dropdown-grid');
+            $li->append(sprintf('<div  class="pwpt-navbar-dropdown"%s><div class="pwpt-container"><div class="pwpt-navbar-dropdown-grid pwpt-child-width-1-%d@s" pwpt-grid=""></div></div></div>', $style, $columns));
+            $div = $li->first('div.pwpt-navbar-dropdown div.pwpt-container div.pwpt-navbar-dropdown-grid');
 
         } else {
             $dropdown_style = $li->attr('dropdown_style');
             $dropdown_style = (!empty($dropdown_style)) ? $dropdown_style : 'bottom-left';
-            $style .=' bdt-dropdown="pos: '.$dropdown_style.'; boundary: .bdt-navbar-container"';
+            $style .=' pwpt-dropdown="pos: '.$dropdown_style.'; boundary: .pwpt-navbar-container"';
             // append dropdown divs
-            $li->append(sprintf('<div  class="bdt-navbar-dropdown bdt-navbar-dropdown-width-%d"%s><div class="bdt-navbar-dropdown-grid bdt-child-width-1-%d@s" bdt-grid=""></div></div>', $columns, $style, $columns));
-            $div = $li->first('div.bdt-navbar-dropdown div.bdt-navbar-dropdown-grid');
+            $li->append(sprintf('<div  class="pwpt-navbar-dropdown pwpt-navbar-dropdown-width-%d"%s><div class="pwpt-navbar-dropdown-grid pwpt-child-width-1-%d@s" pwpt-grid=""></div></div>', $columns, $style, $columns));
+            $div = $li->first('div.pwpt-navbar-dropdown div.pwpt-navbar-dropdown-grid');
 
         }
         foreach ($li->children('ul') as $i => $u) {
-            $u->addClass("bdt-nav bdt-navbar-dropdown-nav");
+            $u->addClass("pwpt-nav pwpt-navbar-dropdown-nav");
             $div->append(sprintf('<div></div>', $columns))->children('div')->item($i)->append($u);
         }
     }

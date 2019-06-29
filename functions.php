@@ -225,6 +225,7 @@ function osaka_light_scripts() {
     wp_enqueue_style( 'bootsnav', OSAKA_LIGHT_CSS . 'bootsnav.css', array(), OSAKA_LIGHT_VER );
 
 	// wp_enqueue_style( 'osaka-light-header', OSAKA_LIGHT_CSS . 'header.css');
+	wp_enqueue_style( 'osaka-light-megamenu', OSAKA_LIGHT_CSS . 'megamenu.css');
 	wp_enqueue_style( 'osaka-light-themes', OSAKA_LIGHT_CSS . 'themes.css');
 	wp_enqueue_style( 'osaka-light-responsive', OSAKA_LIGHT_CSS . 'responsive.css');
 	wp_enqueue_style( 'osaka-light-google-fonts', OSAKA_LIGHT_google_fonts_url());
