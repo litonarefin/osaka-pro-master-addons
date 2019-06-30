@@ -264,6 +264,7 @@ function osaka_light_scripts() {
 		// print_r($payment);
 
 		$order = wc_get_order($payment);
+
         $payment_data = array(
                 'order_id' => $order->get_id(),
                 'product_name' => $order->get_items(),
@@ -334,20 +335,34 @@ function osaka_light_scripts() {
 		// Final Human Time Difference
 		$human_time_diff = human_time_diff( $payment_time_format_unix, $today_date_times_format_unix ) . __(" ago","zebratheme");
 
+		
+		$order_name = new WC_Order( $payment );
+		$items = $order_name->get_items();
+		foreach ( $items as $item ) {
+			// print_r($item);
+		    $product_name = $item->get_name();
+		    $product = get_page_by_title( $item->get_name(), OBJECT, 'product' );
+		    // echo $product_name;
+		    // $product_id = $item->get_product_id();
+		    // $product_variation_id = $item->get_variation_id();
+		}
+
+
 	    $output[] = array( 
 	    	"buyer_name"	=> $payment_data['billing_first_name'],
-	    	"product_name" => $payment_data['product_name'],
+	    	"product_name" => $product_name,
 			"image" => $avatar_url,
-	    	"url" => get_permalink( $payment_data['order_id'] ),
-	    	"time" => $human_time_diff
+	    	"url" => get_permalink( $product->ID ),
+	    	"time" => $human_time_diff,
+	    	"location" => $payment_data['billing_city'] . ',' . $payment_data['billing_country']
 	    );
 	}
 
 
 
-	wp_localize_script( 'osaka-light-main', 'product_vars', array(
-	    'products'  => $output
-	) );
+		wp_localize_script( 'osaka-light-main', 'product_vars', array(
+		    'products'  => $output
+		) );
 
 	// End of the Fomo
 
