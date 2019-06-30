@@ -32,6 +32,29 @@ class Master_Addons_Upgrade_Pro extends Widget_Base{
 	}
 
 	protected function _register_controls() {
+
+			$this->start_controls_section(
+				'pricing_table_title',
+				[
+					'label'                 => esc_html__( 'Content', MELA_TD )
+				]
+			);
+
+
+			$this->add_control(
+				'features_title',
+				[
+					'label'                 => __( 'Features Title', MELA_TD ),
+					'type'                  => Controls_Manager::TEXT,
+					'default'               => __( 'Features', MELA_TD ),
+					'dynamic'               => [
+						'active'   => true,
+					],
+				]
+			);
+			
+			$this->end_controls_section();
+
 			/**
 			 * Master Headlines Content Section
 			 */
@@ -123,6 +146,7 @@ class Master_Addons_Upgrade_Pro extends Widget_Base{
 			$this->end_controls_section();
 
 
+
 			/* Comparision Section */
 
 			$this->start_controls_section(
@@ -147,6 +171,7 @@ class Master_Addons_Upgrade_Pro extends Widget_Base{
 					],
 				]
 			);
+			
 			$repeater->add_control(
 				'free_feature',
 				[
@@ -205,8 +230,8 @@ class Master_Addons_Upgrade_Pro extends Widget_Base{
 			                    <div class="col-xs-6">
 			                        <ul>
 			                            <li>
-			                                <span class="title">
-			                                    <?php echo esc_html__('Features','jeweltheme');?>
+			                                <span class="title">			                                	
+			                                	<?php echo esc_html( $settings['features_title'] ); ?>
 			                                </span>
 			                            </li>
 
