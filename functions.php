@@ -228,7 +228,7 @@ function osaka_light_scripts() {
 	
 
 	// JS
-	wp_enqueue_script( 'bootstrap', OSAKA_LIGHT_JS . 'bootstrap.js', array('jquery'), OSAKA_LIGHT_VER, true ););
+	wp_enqueue_script( 'bootstrap', OSAKA_LIGHT_JS . 'bootstrap.js', array('jquery'), OSAKA_LIGHT_VER, true );
 	wp_enqueue_script( 'osaka-light-main', OSAKA_LIGHT_JS . 'main.js', array('jquery'), '', true );
 
 
