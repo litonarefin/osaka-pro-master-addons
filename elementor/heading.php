@@ -7,7 +7,7 @@ class Master_Addons_Demo_Heading extends Widget_Base{
 	}
 
 	public function get_title(){
-		return "Section Title";
+		return "Demo: Section Title";
 	}
 
 	public function get_icon() {

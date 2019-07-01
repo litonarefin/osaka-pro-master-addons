@@ -20,7 +20,7 @@ class Master_Addons_Upgrade_Pro extends Widget_Base{
 	}
 
 	public function get_title(){
-		return "Upgrade Pro";
+		return "Demo: Upgrade Pro";
 	}
 
 	public function get_icon() {
@@ -94,8 +94,9 @@ class Master_Addons_Upgrade_Pro extends Widget_Base{
 					'label_block' => true,
 					'default' => [
 						'url' => '#',
-						'is_external' => true,
+						'is_external' => "",
 					],
+					'show_external' => true,
 				]
 			);
 
@@ -138,8 +139,9 @@ class Master_Addons_Upgrade_Pro extends Widget_Base{
 					'label_block' => true,
 					'default' => [
 						'url' => '#',
-						'is_external' => true,
+						'is_external' => "",
 					],
+					'show_external' => true,
 				]
 			);
 
@@ -258,7 +260,7 @@ class Master_Addons_Upgrade_Pro extends Widget_Base{
 			                            ?>
 
 			                            <li>
-			                                <a href="<?php echo esc_url_raw( $settings['free_down_link'] );?>" class="btn red-gradient">
+			                                <a href="<?php echo esc_url_raw( $settings['free_down_link']['url'] );?>" class="btn red-gradient">
 			                                        <?php echo esc_html( $settings['free_down_text'] ); ?>
 			                                </a>
 			                            </li>
@@ -278,7 +280,7 @@ class Master_Addons_Upgrade_Pro extends Widget_Base{
 			                                }
 			                            ?>
 			                            <li>
-			                                <a href="<?php echo esc_url_raw( $settings['pro_down_link'] );?>" class="btn">			                                	
+			                                <a href="<?php echo esc_url_raw( $settings['pro_down_link']['url'] );?>" class="btn">			                                	
 			                                    <?php echo esc_html( $settings['pro_down_text'] ); ?>
 			                                </a>
 			                            </li>
