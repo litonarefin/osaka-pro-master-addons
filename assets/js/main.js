@@ -192,53 +192,53 @@
 
 
     /* Fomo by Jewel Theme */
-    $(function() {
-      // console.log(product_vars.products);
+    // $(function() {
+    //   // console.log(product_vars.products);
       
-      var products = product_vars.products;
+    //   var products = product_vars.products;
       
-      getProduct();
+    //   getProduct();
       
-      function getProduct() {
-        var num = Math.floor(Math.random() * products.length);
+    //   function getProduct() {
+    //     var num = Math.floor(Math.random() * products.length);
 
-        $(".buyer_name").text( (products[num].buyer_name) );
-        $(".product_image").attr('src',products[num].image);
-        $(".product_name").text( (products[num].product_name) );
-        $(".product_name").attr('href', (products[num].url) );
-        $(".time_diff").text( products[num].time );
-        // $(".location").text( products[num].location );
+    //     $(".buyer_name").text( (products[num].buyer_name) );
+    //     $(".product_image").attr('src',products[num].image);
+    //     $(".product_name").text( (products[num].product_name) );
+    //     $(".product_name").attr('href', (products[num].url) );
+    //     $(".time_diff").text( products[num].time );
+    //     // $(".location").text( products[num].location );
 
-      }
+    //   }
       
      
-      (function loop() {
-          var rand = Math.round(Math.random() * 5000 ) + 8000;
-          setTimeout(function() {
-            changeNotification();
-            loop();  
-          }, rand);
-      }());
+    //   (function loop() {
+    //       var rand = Math.round(Math.random() * 5000 ) + 8000;
+    //       setTimeout(function() {
+    //         changeNotification();
+    //         loop();  
+    //       }, rand);
+    //   }());
       
-      function changeNotification() {
-        showNotification();
-        setTimeout(function() {
-          hideNotification();
-        }, 6000)
-      }
+    //   function changeNotification() {
+    //     showNotification();
+    //     setTimeout(function() {
+    //       hideNotification();
+    //     }, 6000)
+    //   }
       
-      function showNotification() {
-        $("#fomo").addClass("is-visible");
-      }
+    //   function showNotification() {
+    //     $("#fomo").addClass("is-visible");
+    //   }
       
-      function hideNotification() {
-        $("#fomo").removeClass("is-visible");
-        setTimeout(function() {
-          getProduct();
-        }, 500)
-      }
+    //   function hideNotification() {
+    //     $("#fomo").removeClass("is-visible");
+    //     setTimeout(function() {
+    //       getProduct();
+    //     }, 500)
+    //   }
       
-    });
+    // });
 
 
 

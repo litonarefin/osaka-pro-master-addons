@@ -234,6 +234,11 @@ function osaka_light_scripts() {
 
 
 
+	if( !is_plugin_active('woocommerce/woocommerce.php')){
+		return;
+	}
+
+	
 	// Start of the Fomo
 	global $post;
 
@@ -354,9 +359,9 @@ function osaka_light_scripts() {
 
 
 
-		wp_localize_script( 'osaka-light-main', 'product_vars', array(
-		    'products'  => $output
-		) );
+		// wp_localize_script( 'osaka-light-main', 'product_vars', array(
+		//     'products'  => $output
+		// ) );
 
 	// End of the Fomo
 
@@ -392,7 +397,7 @@ require get_template_directory() . '/inc/megamenu/menu_options.php';
 require get_template_directory() . '/inc/elementor.php';
 
 if ( defined( 'JETPACK__VERSION' ) ) { require get_template_directory() . '/inc/jetpack.php'; }
-if ( class_exists( 'WooCommerce' ) ) { require get_template_directory() . '/inc/woocommerce.php'; }
+// if ( class_exists( 'WooCommerce' ) ) { require get_template_directory() . '/inc/woocommerce.php'; }
 
 
 
