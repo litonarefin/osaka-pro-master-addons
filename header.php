@@ -51,7 +51,7 @@ osaka_light_theme_options();
                 </div>
             </nav> -->
 
-            <nav class="navbar navbar-fixed navbar-transparent navbar-expand-md dark bootsnav">
+            <nav class="navbar fixed-top navbar-transparent navbar-expand-md dark bootsnav">
 
                 <div class="container pwpt-navbar-container">      
                     <!-- Start Header Navigation -->

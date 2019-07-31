@@ -174,8 +174,9 @@
 	$(document).ready(function() {
 		"use strict";
 
-		// var stickyheight = $('.navbar.navbar-default.navbar-fixed').height();
-		// $('.navbar.navbar-default.navbar-fixed + section').css('margin-top', (stickyheight) * 1);	
+		var adminbarheight = $('#wpadminbar').height();
+		//$('body').css('margin-top', (adminbarheight));
+		$('.navbar.fixed-top').css('top', (adminbarheight));		
 
 		var containerwidth = $('.navbar .container').width();
 		$('.full_width .pwpt-navbar-dropdown').css('width', (containerwidth) * 1);	
@@ -252,9 +253,9 @@
 
 jQuery( window ).on( 'scroll', function (){
   if ( jQuery( this ).scrollTop() > 100 ){
-    jQuery( 'header.masthead' ).addClass( "sticky" );
+    jQuery( '.navbar.fixed-top' ).addClass( "sticky" );
   } else {
-    jQuery( 'header.masthead' ).removeClass( "sticky" );
+    jQuery( '.navbar.fixed-top' ).removeClass( "sticky" );
   }
 });
 

@@ -20,7 +20,7 @@ class Master_Addons_Upgrade_Pro extends Widget_Base{
 	}
 
 	public function get_title(){
-		return "Demo: Upgrade Pro";
+		return "Main Site: Upgrade Pro";
 	}
 
 	public function get_icon() {

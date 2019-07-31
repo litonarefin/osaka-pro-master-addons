@@ -7,7 +7,7 @@ class Master_Addons_Demo_Download extends Widget_Base{
 	}
 
 	public function get_title(){
-		return "Demo: Demo & Download Button";
+		return "Main Site: Demo & Download Button";
 	}
 
 	public function get_icon() {
@@ -203,7 +203,7 @@ class Master_Addons_Demo_Download extends Widget_Base{
 		        <?php if( $settings['product_download_text'] && $settings['product_download_link']['url'] ){ ?>
 		          	<div class="gem-button-container gem-button-position-inline">
 		              	<a 
-			                title="<?php echo $product_download_text;?>" 
+			                title="<?php echo $settings['product_download_text'];?>" 
 			                class="gem-button gem-button-download gem-button-size-medium gem-button-style-flat gem-button-text-weight-normal gem-button-no-uppercase thirstylink" 
 			                href="<?php echo esc_url_raw( $settings['product_download_link']['url'] );?>" 
 							<?php echo $this->get_render_attribute_string( 'product_download_button' ); ?>

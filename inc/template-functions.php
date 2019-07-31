@@ -235,12 +235,14 @@ function osaka_light_brand_logo(){ ?>
                     </a>';
                 } else{ ?>
 
-                    <a class="navbar-brand hidden-xs site-title" href="<?php echo esc_url( home_url('/') ); ?>" title="<?php esc_html(bloginfo( 'name' )); ?> - <?php esc_html(bloginfo( 'description' )); ?>">
-                        <?php esc_html(bloginfo( 'name' )); ?>
-                    </a>
-                    <p class="site-description">
-                        <?php esc_html(bloginfo( 'description' )); ?>                            
-                    </p>                    
+                    <div class="d-flex flex-column">
+                        <a class="navbar-brand hidden-xs site-title p-2" href="<?php echo esc_url( home_url('/') ); ?>" title="<?php esc_html(bloginfo( 'name' )); ?> - <?php esc_html(bloginfo( 'description' )); ?>">
+                            <?php esc_html(bloginfo( 'name' )); ?>
+                        </a>
+                        <p class="site-description p-2">
+                            <?php esc_html(bloginfo( 'description' )); ?>                            
+                        </p>
+                    </div>
                 <?php }
             ?>
 

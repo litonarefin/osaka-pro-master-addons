@@ -75,7 +75,7 @@ final class osaka_light_Customize {
 				array(
 					'title'    => esc_html__( 'Premium Verison', 'osaka-light' ),
 					'pro_text' => esc_html__( 'Upgrade to Pro',         'osaka-light' ),
-					'pro_url'  => 'https://prowptheme.com/themes/osaka/',
+					'pro_url'  => 'https://prowptheme.com/themes/osaka-gutenberg-wordpress-theme/',
 					'priority' => 0
 				)
 			)

@@ -7,7 +7,7 @@ class Master_Addons_Demo_Pricing_License extends Widget_Base{
 	}
 
 	public function get_title(){
-		return "Demo: Pricing License";
+		return "Main Site: Pricing License";
 	}
 
 	public function get_icon() {
