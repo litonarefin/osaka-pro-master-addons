@@ -195,18 +195,18 @@ class Master_Addons_Info_Service extends Widget_Base{
 						?>
 							<div class="col-md-4">
 								<div class="home-info-item">
-									<div class="item-icon" style="background: url('<?php echo esc_url($tab['info_service_icon_image']['url']); ?>') center no-repeat">
-										<i class="<?php echo esc_attr( $tab['info_service_icon'] ); ?>"></i>
+									<div class="item-icon">
+										<img src="<?php echo esc_url($tab['info_service_icon_image']['url']); ?>" alt="<?php echo get_post_meta( $tab['info_service_icon_image']['id'], '_wp_attachment_image_alt', true);?>">
+										<!-- <i class="<?php //echo esc_attr( $tab['info_service_icon'] ); ?>"></i> -->
 									</div><!-- /.item-icon -->
 
 									<div class="item-details">
 										<h4 class="item-title">
-											<a href="#">
-												<?php echo $tab['info_service_title']; ?>
-											</a>
+											<?php echo $tab['info_service_title']; ?>
 										</h4><!-- /.item-title -->
-
-										<?php echo $tab['info_service_content']; ?>
+										<p>
+											<?php echo $tab['info_service_content']; ?>
+										</p>
 										
 									</div>
 								</div>

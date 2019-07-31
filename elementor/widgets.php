@@ -68,7 +68,7 @@ class Master_Addons_Site_Widgets extends Widget_Base{
 			$this->add_control(
 				'widgets_button_link',
 				[
-					'label' => __( 'Video Link', MELA_TD ),
+					'label' => __( 'All Widgets Link', MELA_TD ),
 					'type' => Controls_Manager::URL,
 					'placeholder' => __( 'https://master-addons.com/widgets', MELA_TD ),
 					'label_block' => true,
@@ -134,6 +134,20 @@ class Master_Addons_Site_Widgets extends Widget_Base{
 				]
 			);
 
+			$repeater->add_control(
+				'widgets_link',
+				[
+					'label' => __( 'Widget Link', MELA_TD ),
+					'type' => Controls_Manager::URL,
+					'placeholder' => __( 'https://master-addons.com/widgets', MELA_TD ),
+					'label_block' => true,
+					'default' => [
+						'url' => '#',
+						'is_external' => true,
+					],
+				]
+			);
+
 			$this->add_control(
 				'widgets_tabs',
 				[
@@ -194,24 +208,41 @@ class Master_Addons_Site_Widgets extends Widget_Base{
 
 							$tab_count = $index+1;
 							$tab_title_setting_key = $this->get_repeater_setting_key('widgets_title', 'widgets_tabs', $index);
-							$tab_content_setting_key = $this->get_repeater_setting_key('widgets_content', 'widgets_tabs', $index);				
+							$tab_content_setting_key = $this->get_repeater_setting_key('widgets_content', 'widgets_tabs', $index);
+
+
+							// Widget Link 
+							if( $tab['widgets_link']['is_external'] ) {
+								$this->add_render_attribute( 'widget_link', 'target', '_blank' );
+							}
+							
+							if( $tab['widgets_link']['nofollow'] ) {
+								$this->add_render_attribute( 'widget_link', 'rel', 'nofollow' );
+							}
+											
 						?>
+						
 							<div class="col-lg-3 col-md-6">
-								<div class="home-widgets-item">
-									<div class="item-front">
-										<div class="front-inner">
-											<i class="<?php echo $tab['widgets_icon']; ?>"></i>
-											<h4 class="item-title">
-												<?php echo $tab['widgets_title']; ?>
-											</h4><!-- /.item-title -->
-										</div><!-- /.front-inner -->
-									</div><!-- /.item-front -->
-									<div class="item-back">
-										<div class="back-inner">									
-											<?php echo $tab['widgets_content']; ?>
-										</div><!-- /.back-inner -->
-									</div><!-- /.item-back -->
-								</div>
+								<a 
+									href="<?php echo esc_url_raw( $tab['widgets_link']['url'] );?>"
+									<?php echo $this->get_render_attribute_string( 'widget_link' ); ?>>
+									<div class="home-widgets-item">
+										<div class="item-front">
+											<div class="front-inner">
+												<i class="<?php echo $tab['widgets_icon']; ?>"></i>
+												<h4 class="item-title">
+													<?php echo $tab['widgets_title']; ?>
+												</h4><!-- /.item-title -->
+											</div><!-- /.front-inner -->
+										</div><!-- /.item-front -->
+										<div class="item-back">
+											<div class="back-inner">									<p>
+													<?php echo $tab['widgets_content']; ?>
+												</p>
+											</div><!-- /.back-inner -->
+										</div><!-- /.item-back -->
+									</div>
+								</a>
 							</div>
 
 						<?php } ?>
