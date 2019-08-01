@@ -13,7 +13,7 @@
  * @package Osaka-Pro
  */
 
-get_header();
+get_header('home');
 
 the_post();
 

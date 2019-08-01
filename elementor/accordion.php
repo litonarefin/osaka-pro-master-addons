@@ -165,11 +165,12 @@ class Master_Addons_Main_Site_Accordion extends Widget_Base{
 						$tab_title_setting_key = $this->get_repeater_setting_key('main_site_accordion_title', 'main_site_accordion_tabs', $index);
 						$tab_content_setting_key = $this->get_repeater_setting_key('accordion_content', 'main_site_accordion_tabs', $index);
 
-						$tab_title_class 	= ['ma-accordion-tab-title'];
+						// $tab_title_class 	= ['ma-accordion-tab-title'];
+						$tab_title_class 	= [];
 						$tab_content_class 	= ['ma-accordion-tab-content'];
 
 						// if ( $tab['accordion_tab_default_active'] == 'yes' ) {
-							$tab_title_class[] 		= 'btn btn-link';
+							$tab_title_class[] 		= 'btn btn-link' . (($tab_count==1) ? " collapsed" : "");
 							$tab_content_class[] 	= 'ma-accordion-tab-active-default';
 						// }
 
@@ -177,8 +178,8 @@ class Master_Addons_Main_Site_Accordion extends Widget_Base{
 							'id'                => 'ma-accordion-tab-title-' . $id_int . $tab_count,
 							'class'             => $tab_title_class,
 							'data-toggle'       => 'collapse',
-							'data-target'       => 'collapse' . $tab_count ,
-							'aria-expanded'     => false,
+							'data-target'       => '#collapse' . $tab_count ,
+							'aria-expanded'     => ($tab_count==1) ? true : false,
 							'aria-controls'     => 'collapse' . $tab_count ,
 
 							// 'tabindex'          => $tab_count,
@@ -218,7 +219,7 @@ class Master_Addons_Main_Site_Accordion extends Widget_Base{
 								</button>
 							</div>
 
-							<div id="<?php echo 'collapse' . $tab_count;?>" class="collapse" aria-labelledby="heading<?php echo $tab_count;?>" data-parent="#ma-home-accordion">
+							<div id="<?php echo 'collapse' . $tab_count;?>" class="collapse <?php echo ($tab_count ==1)? "show" : "";?>" aria-labelledby="heading<?php echo $tab_count;?>" data-parent="#ma-home-accordion">
 								<div class="card-body">
 									<?php echo do_shortcode( $tab['main_site_accordion_content'] );?>
 								</div>

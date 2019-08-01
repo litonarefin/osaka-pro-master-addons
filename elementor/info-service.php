@@ -193,23 +193,27 @@ class Master_Addons_Info_Service extends Widget_Base{
 							$tab_title_setting_key = $this->get_repeater_setting_key('info_service_title', 'info_service_tabs', $index);
 							$tab_content_setting_key = $this->get_repeater_setting_key('info_service_content', 'info_service_tabs', $index);				
 						?>
+
+
+
 							<div class="col-md-4">
+
 								<div class="home-info-item">
-									<div class="item-icon">
-										<img src="<?php echo esc_url($tab['info_service_icon_image']['url']); ?>" alt="<?php echo get_post_meta( $tab['info_service_icon_image']['id'], '_wp_attachment_image_alt', true);?>">
-										<!-- <i class="<?php //echo esc_attr( $tab['info_service_icon'] ); ?>"></i> -->
+									<div class="item-icon banner-background-bg" data-image-src="<?php echo esc_url($tab['info_service_icon_image']['url']); ?>">
+										<i class="<?php echo esc_attr( $tab['info_service_icon'] ); ?>"></i>
 									</div><!-- /.item-icon -->
 
 									<div class="item-details">
 										<h4 class="item-title">
 											<?php echo $tab['info_service_title']; ?>
 										</h4><!-- /.item-title -->
+
 										<p>
 											<?php echo $tab['info_service_content']; ?>
 										</p>
-										
 									</div>
 								</div>
+
 							</div>
 
 						<?php } ?>
@@ -217,6 +221,7 @@ class Master_Addons_Info_Service extends Widget_Base{
 					</div>
 				</div>
 			</section><!-- /.ma-home-info -->
+
 
 
 		<?php

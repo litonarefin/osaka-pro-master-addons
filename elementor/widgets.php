@@ -223,24 +223,13 @@ class Master_Addons_Site_Widgets extends Widget_Base{
 						?>
 						
 							<div class="col-lg-3 col-md-6">
-								<a 
-									href="<?php echo esc_url_raw( $tab['widgets_link']['url'] );?>"
+								<a href="<?php echo esc_url_raw( $tab['widgets_link']['url'] );?>"
 									<?php echo $this->get_render_attribute_string( 'widget_link' ); ?>>
-									<div class="home-widgets-item">
-										<div class="item-front">
-											<div class="front-inner">
-												<i class="<?php echo $tab['widgets_icon']; ?>"></i>
-												<h4 class="item-title">
-													<?php echo $tab['widgets_title']; ?>
-												</h4><!-- /.item-title -->
-											</div><!-- /.front-inner -->
-										</div><!-- /.item-front -->
-										<div class="item-back">
-											<div class="back-inner">									<p>
-													<?php echo $tab['widgets_content']; ?>
-												</p>
-											</div><!-- /.back-inner -->
-										</div><!-- /.item-back -->
+									<div class="home-widgets-item">				
+										<i class="<?php echo $tab['widgets_icon']; ?>"></i>
+										<h4 class="item-title">
+											<?php echo $tab['widgets_title']; ?>
+										</h4><!-- /.item-title -->
 									</div>
 								</a>
 							</div>

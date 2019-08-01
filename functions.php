@@ -238,11 +238,11 @@ function osaka_light_scripts() {
 		
 		require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 
-		if( !is_plugin_active('woocommerce/woocommerce.php')){
-			return;
-		}
 	}
-     
+
+	if( !is_plugin_active('woocommerce/woocommerce.php')){
+		return;
+	}     
 	
 	// Start of the Fomo
 	global $post;

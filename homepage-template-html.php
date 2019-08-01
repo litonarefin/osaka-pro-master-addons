@@ -16,16 +16,17 @@
 get_header();
 ?>
 
-<section class="banner main-banner">
+
+<section class="ma-home-banner">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-7">
-				<h2 class="banner-title">Master Addons</h2>
+				<h2 class="ma-banner-title">Master Addons</h2>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 				</p>
 
-				<div class="btn-group">
+				<div class="ma-home-btn-group">
 					<a href="#" class="ma-home-btn">View widgets</a>
 					<a href="#" class="ma-home-btn">Watch video</a>
 				</div><!-- /.btn-group -->
@@ -35,15 +36,15 @@ get_header();
 			</div>
 		</div><!-- /.row -->
 	</div><!-- /.container -->
-</section><!-- /.banner -->
+</section><!-- /.ma-home-banner -->
 
 
 
 <section class="ma-home-info text-center">
 	<div class="container">
-		<h2 class="section-title blue">Heading here</h2>
-		<h4 class="sub-heading">Enthusiastically iterate viral e-markets before diverse materials. Proactively e-enable empowered.</h4>
-		<p class="section-description">
+		<h2 class="ma-section-title blue">Heading here</h2>
+		<h4 class="ma-sub-heading">Enthusiastically iterate viral e-markets before diverse materials. Proactively e-enable empowered.</h4>
+		<p class="ma-section-description">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
 		</p>
 
@@ -55,7 +56,7 @@ get_header();
 					</div><!-- /.item-icon -->
 
 					<div class="item-details">
-						<h4 class="item-title"><a href="#">Lorem Ipsum #01</a></h4><!-- /.item-title -->
+						<h4 class="item-title">Lorem Ipsum #01</h4><!-- /.item-title -->
 						<p>Ut enim ad minim veniam,  perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
 					</div>
 				</div>
@@ -67,7 +68,7 @@ get_header();
 					</div><!-- /.item-icon -->
 
 					<div class="item-details">
-						<h4 class="item-title"><a href="#">Lorem Ipsum #01</a></h4><!-- /.item-title -->
+						<h4 class="item-title">Lorem Ipsum #01</h4><!-- /.item-title -->
 						<p>Ut enim ad minim veniam,  perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
 					</div>
 				</div>
@@ -79,160 +80,88 @@ get_header();
 					</div><!-- /.item-icon -->
 
 					<div class="item-details">
-						<h4 class="item-title"><a href="#">Lorem Ipsum #01</a></h4><!-- /.item-title -->
+						<h4 class="item-title">Lorem Ipsum #01</h4><!-- /.item-title -->
 						<p>Ut enim ad minim veniam,  perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
+		</div><!-- /.row -->
+	</div><!-- /.container -->
 </section><!-- /.ma-home-info -->
 
 
 
 <section class="ma-home-widgets-section text-center">
 	<div class="container">
-		<h2 class="section-title">Master Addons Widgets</h2><!-- /.section-title -->
-		<p class="section-description">
+		<h2 class="ma-section-title">Master Addons Widgets</h2><!-- /.ma-section-title -->
+		<p class="ma-section-description">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
-		</p><!-- /.section-description -->
+		</p><!-- /.ma-section-description -->
 
 		<div class="row">
 			<div class="col-lg-3 col-md-6">
-				<div class="home-widgets-item">				
-					<div class="item-front">
-						<div class="front-inner">
-							<i class="ti-settings"></i>
-							<h4 class="item-title">Item title here</h4><!-- /.item-title -->
-						</div><!-- /.front-inner -->
-					</div><!-- /.item-front -->
-					<div class="item-back">
-						<div class="back-inner">
-							<p>
-								Ut enim ad minim veniam, perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-							</p>
-						</div><!-- /.back-inner -->
-					</div><!-- /.item-back -->
-				</div>
+				<a href="#">
+					<div class="home-widgets-item">				
+						<i class="ti-settings"></i>
+						<h4 class="item-title">Item title here</h4><!-- /.item-title -->
+					</div>
+				</a>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<div class="home-widgets-item">
-					<div class="item-front">
-						<div class="front-inner">
-							<i class="ti-settings"></i>
-							<h4 class="item-title">Item title here</h4><!-- /.item-title -->
-						</div><!-- /.front-inner -->
-					</div><!-- /.item-front -->
-					<div class="item-back">
-						<div class="back-inner">
-							<p>
-								Ut enim ad minim veniam, perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-							</p>
-						</div><!-- /.back-inner -->
-					</div><!-- /.item-back -->
-				</div>
+				<a href="#">
+					<div class="home-widgets-item">
+						<i class="ti-settings"></i>
+						<h4 class="item-title">Item title here</h4><!-- /.item-title -->
+					</div>
+				</a>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<div class="home-widgets-item">
-					<div class="item-front">
-						<div class="front-inner">
-							<i class="ti-settings"></i>
-							<h4 class="item-title">Item title here</h4><!-- /.item-title -->
-						</div><!-- /.front-inner -->
-					</div><!-- /.item-front -->
-					<div class="item-back">
-						<div class="back-inner">
-							<p>
-								Ut enim ad minim veniam, perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-							</p>
-						</div><!-- /.back-inner -->
-					</div><!-- /.item-back -->
-				</div>
+				<a href="#">
+					<div class="home-widgets-item">
+						<i class="ti-settings"></i>
+						<h4 class="item-title">Item title here</h4><!-- /.item-title -->
+					</div>
+				</a>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<div class="home-widgets-item">
-					<div class="item-front">
-						<div class="front-inner">
-							<i class="ti-settings"></i>
-							<h4 class="item-title">Item title here</h4><!-- /.item-title -->
-						</div><!-- /.front-inner -->
-					</div><!-- /.item-front -->
-					<div class="item-back">
-						<div class="back-inner">
-							<p>
-								Ut enim ad minim veniam, perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-							</p>
-						</div><!-- /.back-inner -->
-					</div><!-- /.item-back -->
-				</div>
+				<a href="#">
+					<div class="home-widgets-item">
+						<i class="ti-settings"></i>
+						<h4 class="item-title">Item title here</h4><!-- /.item-title -->
+					</div>
+				</a>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<div class="home-widgets-item">
-					<div class="item-front">
-						<div class="front-inner">
-							<i class="ti-settings"></i>
-							<h4 class="item-title">Item title here</h4><!-- /.item-title -->
-						</div><!-- /.front-inner -->
-					</div><!-- /.item-front -->
-					<div class="item-back">
-						<div class="back-inner">
-							<p>
-								Ut enim ad minim veniam, perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-							</p>
-						</div><!-- /.back-inner -->
-					</div><!-- /.item-back -->
-				</div>
+				<a href="#">
+					<div class="home-widgets-item">
+						<i class="ti-settings"></i>
+						<h4 class="item-title">Item title here</h4><!-- /.item-title -->
+					</div>
+				</a>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<div class="home-widgets-item">
-					<div class="item-front">
-						<div class="front-inner">
-							<i class="ti-settings"></i>
-							<h4 class="item-title">Item title here</h4><!-- /.item-title -->
-						</div><!-- /.front-inner -->
-					</div><!-- /.item-front -->
-					<div class="item-back">
-						<div class="back-inner">
-							<p>
-								Ut enim ad minim veniam, perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-							</p>
-						</div><!-- /.back-inner -->
-					</div><!-- /.item-back -->
-				</div>
+				<a href="#">
+					<div class="home-widgets-item">
+						<i class="ti-settings"></i>
+						<h4 class="item-title">Item title here</h4><!-- /.item-title -->
+					</div>
+				</a>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<div class="home-widgets-item">
-					<div class="item-front">
-						<div class="front-inner">
-							<i class="ti-settings"></i>
-							<h4 class="item-title">Item title here</h4><!-- /.item-title -->
-						</div><!-- /.front-inner -->
-					</div><!-- /.item-front -->
-					<div class="item-back">
-						<div class="back-inner">
-							<p>
-								Ut enim ad minim veniam, perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-							</p>
-						</div><!-- /.back-inner -->
-					</div><!-- /.item-back -->
-				</div>
+				<a href="#">
+					<div class="home-widgets-item">
+						<i class="ti-settings"></i>
+						<h4 class="item-title">Item title here</h4><!-- /.item-title -->
+					</div>
+				</a>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<div class="home-widgets-item">
-					<div class="item-front">
-						<div class="front-inner">
-							<i class="ti-settings"></i>
-							<h4 class="item-title">Item title here</h4><!-- /.item-title -->
-						</div><!-- /.front-inner -->
-					</div><!-- /.item-front -->
-					<div class="item-back">
-						<div class="back-inner">
-							<p>
-								Ut enim ad minim veniam, perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-							</p>
-						</div><!-- /.back-inner -->
-					</div><!-- /.item-back -->
-				</div>
+				<a href="#">
+					<div class="home-widgets-item">
+						<i class="ti-settings"></i>
+						<h4 class="item-title">Item title here</h4><!-- /.item-title -->
+					</div>
+				</a>
 			</div>
 		</div><!-- /.row -->
 
@@ -251,8 +180,8 @@ get_header();
 				
 			</div>
 			<div class="col-lg-6">
-				<h2 class="section-title white">Watch the Video</h2><!-- /.section-title -->
-				<p class="section-description white">
+				<h2 class="ma-section-title white">Watch the Video</h2><!-- /.ma-section-title -->
+				<p class="ma-section-description white">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
 				</p>
 				<a href="#" class="popup-video"><img src="images/play.png" alt="Icon image"></a>
@@ -314,17 +243,76 @@ get_header();
 	</div><!-- /.container -->
 </section><!-- /.home-faq -->
 
-<section class="ma-home-free-trail text-center">
-	<div class="bg-image"></div>
+
+
+<section class="ma-home-testimonial text-center">
+	<div class="testimonial-bg"></div><!-- /.testimonial-bg -->
 	<div class="container">
-		<h2 class="section-title white-md">Get started now</h2>
-		<p class="section-description white">
+		<h2 class="ma-section-title">What Clients are Saying</h2><!-- /.ma-section-title -->
+		<p class="ma-section-description">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+		</p><!-- /.ma-section-description -->
+
+		<div class="row">
+			<div class="col-md-4">
+				<div class="ma-testimonial-item">
+					<div class="item-top">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+						</p>
+					</div><!-- /.item-top -->
+					<div class="item-details">
+						<div class="avatar"><img class="rounded-circle" src="images" alt="Avatar Image"></div><!-- /.avatar -->
+						<h4 class="name"><a href="#">Jack Sparrow</a></h4><!-- /.name -->
+						<span class="designation">Co-Founder</span><!-- /.designation -->
+					</div><!-- /.item-details -->
+				</div><!-- /.ma-testimonial-item -->
+			</div>
+			<div class="col-md-4">
+				<div class="ma-testimonial-item">
+					<div class="item-top">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+						</p>
+					</div><!-- /.item-top -->
+					<div class="item-details">
+						<div class="avatar"><img class="rounded-circle" src="images" alt="Avatar Image"></div><!-- /.avatar -->
+						<h4 class="name"><a href="#">Jack Sparrow</a></h4><!-- /.name -->
+						<span class="designation">Co-Founder</span><!-- /.designation -->
+					</div><!-- /.item-details -->
+				</div><!-- /.ma-testimonial-item -->
+			</div>
+			<div class="col-md-4">
+				<div class="ma-testimonial-item">
+					<div class="item-top">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+						</p>
+					</div><!-- /.item-top -->
+					<div class="item-details">
+						<div class="avatar"><img class="rounded-circle" src="images" alt="Avatar Image"></div><!-- /.avatar -->
+						<h4 class="name"><a href="#">Jack Sparrow</a></h4><!-- /.name -->
+						<span class="designation">Co-Founder</span><!-- /.designation -->
+					</div><!-- /.item-details -->
+				</div><!-- /.ma-testimonial-item -->
+			</div>
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+</section><!-- /.ma-home-testimonial -->
+
+
+
+<section class="ma-home-free-trail text-center">
+	<div class="container">
+		<h2 class="ma-section-title white">Get started now</h2>
+		<p class="ma-section-description white">
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. ut labore et dolore magna aliqua.
 		</p>
 
 		<a href="#" class="btn ma-home-btn">Download free</a>
 	</div><!-- /.container -->	
 </section><!-- /.ma-home-free-trail -->
+
 
 <?php
 get_footer();

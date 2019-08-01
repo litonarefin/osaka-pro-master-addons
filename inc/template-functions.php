@@ -222,32 +222,29 @@ function osaka_light_header_banner(){
 
 
 
-function osaka_light_brand_logo(){ ?>
+function osaka_light_brand_logo(){ 
 
-
-            <?php 
-                $custom_logo_id = get_theme_mod( 'custom_logo' );
-                $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                
-                if( has_custom_logo() ){
-                    echo '<a class="navbar-brand" href="' . esc_url(home_url('/')) .'">
-                    <img class="logo logo-display" src="'. esc_url( $logo[0] ) . '" alt="' . esc_attr( get_bloginfo('name') ) . '">
-                    </a>';
-                } else{ ?>
-
-                    <div class="d-flex flex-column">
-                        <a class="navbar-brand hidden-xs site-title p-2" href="<?php echo esc_url( home_url('/') ); ?>" title="<?php esc_html(bloginfo( 'name' )); ?> - <?php esc_html(bloginfo( 'description' )); ?>">
-                            <?php esc_html(bloginfo( 'name' )); ?>
-                        </a>
-                        <p class="site-description p-2">
-                            <?php esc_html(bloginfo( 'description' )); ?>                            
-                        </p>
-                    </div>
-                <?php }
-            ?>
-
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
     
-    <?php
+    if( has_custom_logo() ){ ?>
+
+        <a class="navbar-brand" href="<?php echo esc_url(home_url('/'));?>">
+            <img class="logo logo-display" src="<?php echo esc_url( $logo[0] );?>" alt="<?php echo esc_attr( get_bloginfo('name') );?>">
+        </a>
+
+    <?php } else{ ?>
+
+        <div class="d-flex flex-column">
+            <a class="navbar-brand hidden-xs site-title p-2" href="<?php echo esc_url( home_url('/') ); ?>" title="<?php esc_html(bloginfo( 'name' )); ?> - <?php esc_html(bloginfo( 'description' )); ?>">
+                <?php esc_html(bloginfo( 'name' )); ?>
+            </a>
+            <p class="site-description p-2">
+                <?php esc_html(bloginfo( 'description' )); ?>                            
+            </p>
+        </div>
+    <?php }
+
 }
 
 
