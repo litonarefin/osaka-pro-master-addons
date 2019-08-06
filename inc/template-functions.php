@@ -332,7 +332,7 @@ function osaka_light_footer_social(){
 
 
 function osaka_light_footer_links_menu(){
-    if ( is_active_sidebar( 'footer-menu' ) ) {
+    if ( !is_active_sidebar( 'footer-menu' ) ) {
         dynamic_sidebar('footer-menu');
     }    
 }

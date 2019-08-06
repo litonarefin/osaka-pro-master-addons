@@ -18,7 +18,7 @@ $copyright = wp_kses_post($osaka_light_options['copyright_text']);
         <div class="wrapper">
             <div class="buyer">
                 <span class="buyer_name"></span> 
-                <?php echo esc_html__(' Purchased','master-addons');?>
+                <?php //echo esc_html__(' Purchased','master-addons');?>
             </div>
             <a href="#" class="product_name"></a>
             <div class="time_diff"></div>
@@ -39,7 +39,11 @@ $copyright = wp_kses_post($osaka_light_options['copyright_text']);
                         <div class="col-lg-9">
                             <div class="row">
 
-                                <?php dynamic_sidebar( 'footer-sidebar' ); ?>
+                                <?php 
+                                    if( !is_active_sidebar('footer-sidebar')){
+                                        dynamic_sidebar( 'footer-sidebar' );    
+                                    }
+                                ?>
                             </div>
 
                         </div>

@@ -3,11 +3,11 @@ namespace Elementor;
 class Master_Addons_Demo_Heading extends Widget_Base{
 
 	public function get_name(){
-		return "section-title";
+		return "ma-site-section-title";
 	}
 
 	public function get_title(){
-		return "Main Site: Section Title";
+		return "Main Site: Section Heading";
 	}
 
 	public function get_icon() {
@@ -38,30 +38,60 @@ class Master_Addons_Demo_Heading extends Widget_Base{
 				]
 			);
 
-			$this->add_responsive_control(
+			$this->add_control(
+				'ma_el_heading_subtitle',
+				[
+					'label' => esc_html__( 'Sub Title', MELA_TD ),
+					'type' => Controls_Manager::TEXTAREA,
+					'label_block' => true,
+					'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga suscipit quidem dolores beatae atque at voluptas delectus.', MELA_TD ),
+				]
+			);
+
+			$this->add_control(
 				'ma_el_heading_alignment',
 				[
-					'label' => esc_html__( 'Alignment', MELA_TD ),
+					'label' => __( 'Alignment', MELA_TD ),
 					'type' => Controls_Manager::CHOOSE,
-					'label_block' => true,
 					'options' => [
 						'left' => [
-							'title' => esc_html__( 'Left', MELA_TD ),
+							'title' => __( 'Left', MELA_TD ),
 							'icon' => 'fa fa-align-left',
 						],
 						'center' => [
-							'title' => esc_html__( 'Center', MELA_TD ),
+							'title' => __( 'Center', MELA_TD ),
 							'icon' => 'fa fa-align-center',
 						],
 						'right' => [
-							'title' => esc_html__( 'Right', MELA_TD ),
+							'title' => __( 'Right', MELA_TD ),
 							'icon' => 'fa fa-align-right',
 						],
 					],
 					'default' => 'center',
-					'label_block' => true,
+					'prefix_class' => 'ma-el-section-heading-align-',
+				]
+			);
+
+			$this->add_control(
+				'ma_el_heading_color',
+				[
+					'label' => __( 'Heading Text Color', MELA_TD ),
+					'type' => Controls_Manager::COLOR,
+					'default' => '#393c3f',
 					'selectors' => [
-						'{{WRAPPER}}' => 'text-align: {{VALUE}};',
+						'{{WRAPPER}} .page-content-section-title' => 'color: {{VALUE}}'
+					],
+				]
+			);
+
+			$this->add_control(
+				'ma_el_sub_heading_color',
+				[
+					'label' => __( 'Sub Heading Text Color', MELA_TD ),
+					'type' => Controls_Manager::COLOR,
+					'default' => '#78909c',
+					'selectors' => [
+						'{{WRAPPER}} .page-content-section-description' => 'color: {{VALUE}}'
 					],
 				]
 			);
@@ -73,13 +103,32 @@ class Master_Addons_Demo_Heading extends Widget_Base{
 
 	protected function render() {
 		$settings = $this->get_settings_for_display();
+
+		$this->add_render_attribute( 'ma_el_site_heading_wrapper', [
+				'class' => [ 
+							'ma-site-section-title', 
+							'ma-page-content-section'
+				],
+
+			]
+		);
+
 		?>
-		
-			<div class="section-top">
-				<h2 class="section-title"> 
-					<?php echo esc_html( $settings['ma_el_heading_title'] ); ?>
-				<span></span></h2>
-			</div>
+
+			<section <?php echo $this->get_render_attribute_string( 'ma_el_site_heading_wrapper' ); ?>>
+				<div class="container">
+					<div class="section-top">
+						<h2 class="page-content-section-title">
+							<?php echo esc_html( $settings['ma_el_heading_title'] ); ?>
+						</h2>
+						<p class="page-content-section-description">
+							<?php echo esc_html( $settings['ma_el_heading_subtitle'] ); ?>
+						</p>
+					</div>
+				</div>
+			</section>
+
+
 		<?php
 	}
 

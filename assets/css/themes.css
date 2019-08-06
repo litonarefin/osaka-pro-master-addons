@@ -1470,7 +1470,14 @@ footer .footer-bottom {
   transition: all 0.3s ease;  
 }
 .navbar.dark {
-  background: #4b00e7;
+  background: #fff;
+}
+.navbar.dark .pwpt-navbar-nav li a {
+  color: #393c3f;
+}
+.navbar.dark .pwpt-navbar-nav .ma-home-btn a {
+  border-color: #4b00e7;
+  color: #4b00e7;
 }
 .navbar.sticky {
   background: #4b00e7;
@@ -1621,6 +1628,13 @@ footer .footer-bottom {
 }
 .navbar.sticky .pwpt-navbar-nav li ul a {
   line-height: 1.5;
+}
+.navbar.dark.sticky .pwpt-navbar-nav li>a {
+  color: #fff;
+}
+.navbar.dark.sticky .pwpt-navbar-nav .ma-home-btn a {
+  border-color: #fff;
+  color: #fff;
 }
 
 
@@ -2623,10 +2637,132 @@ footer .footer-bottom {
     padding: 1.435rem 4.5rem;
   }
 
+/* Pages Styles */
+
+.ma-page-banner {
+  background: url('../../images/page-bg.png') center no-repeat;
+  background-size: cover;
+  padding: 10.75rem 0 6.75rem;
+}
+.ma-page-banner .row {
+  align-items: center;
+  /*flex-direction: column;*/
+}
+.ma-page-banner .page-title {
+  color: #fff;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+.ma-page-banner .page-description {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.banner-image-content {
+  min-height: 180px;
+}
+.banner-image-content .popup-video {
+  background: #de388e;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  height: 70px;
+  width: 70px;
+  line-height: 70px;
+  padding: 15px;
+  left: 50%;
+  top: 50%;
+  margin-top: -35px;
+  margin-left: -35px;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+
+  transition: all 0.4s ease;
+}
+.banner-image-content .popup-video:hover {
+  background: #4b00e7;
+}
+.banner-image-content .popup-video .dashicons {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+  z-index: 2;
+}
+
+.bg {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1920px;
+  height: 6217px;
+  z-index: 187;
+}
+.Layer_6 {
+  background-image: url("Layer 6.png");
+  position: absolute;
+  left: 373px;
+  top: 2125px;
+  width: 482px;
+  height: 778px;
+  z-index: 186;
+}
+.Layer_5 {
+  background-image: url("Layer 5.png");
+  opacity: 0.2;
+  position: absolute;
+  left: 0px;
+  top: 1702px;
+  width: 1920px;
+  height: 1536px;
+  z-index: 185;
+}
+
+.elementor-widget:not(:last-child){
+  margin-bottom: 0 !important;
+}
+.ma-page-content-section {
+  padding: 5.25rem 0 0;
+}
+.ma-page-content-section .section-top {
+  margin-bottom: 0;
+}
+.page-content-section-title {
+  color: #393c3f;
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+}
+.page-content-section-description {
+  color: #78909c;
+  font-size: 15px;
+}
+
+/* Section 3 Gradient Bg
+.Rectangle_9 {
+  background-image: -moz-linear-gradient( 0deg, rgb(31,166,142) 0%, rgb(231,217,0) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(31,166,142) 0%, rgb(231,217,0) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgb(31,166,142) 0%, rgb(231,217,0) 100%);
+}*/
 
 
 
-
-
-
-
+.ma-el-section-heading-align-left {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+}
+.ma-el-section-heading-align-center {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+.ma-el-section-heading-align-right {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    text-align: right;
+}

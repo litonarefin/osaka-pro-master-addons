@@ -23,34 +23,6 @@ osaka_light_theme_options();
 <body <?php body_class(); ?>>
 
 
-        <?php //osaka_light_brand_logo();?>
-            <!-- <nav class="navbar navbar-expand-md m-0">
-                
-                <?php //osaka_light_brand_logo();?>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fa fa-bars"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="main-menu">
-                    
-                    <?php
-                      //   $args = array(
-                      //       'theme_location'    => 'main-menu',
-                      //       'depth'             => 2,
-                      //       'container'         => false,
-                      //       'container'         => '',
-                      //       'container_class'   => '',
-                      //       'menu_class'        => 'nav navbar-nav',
-                      //       'walker'            => new osaka_light_Navwalker(),
-                      //       'fallback_cb'       => 'osaka_light_Navwalker::fallback',
-                      //   );
-                      // wp_nav_menu($args);
-                    ?>
-
-                </div>
-            </nav> -->
-
             <nav class="navbar fixed-top navbar-transparent navbar-expand-md bootsnav">
 
                 <div class="container pwpt-navbar-container">      
