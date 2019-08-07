@@ -1471,6 +1471,7 @@ footer .footer-bottom {
 }
 .navbar.dark {
   background: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
 }
 .navbar.dark .pwpt-navbar-nav li a {
   color: #393c3f;
@@ -1502,6 +1503,21 @@ footer .footer-bottom {
   max-width: 200px;
   margin: 0;
   padding: 0;   
+}
+.navbar .navbar-brand img {
+  transition: all 0.4s ease;
+}
+.navbar.dark .logo-page-display {
+  height: 0;
+  opacity: 0;
+}
+.navbar.dark.sticky .logo-display {
+  height: 0;
+  opacity: 0;
+}
+.navbar.dark.sticky .logo-page-display {
+  height: auto;
+  opacity: 1;
 }
 .pwpt-navbar-nav li {
   float: left;
@@ -2329,6 +2345,13 @@ footer .footer-bottom {
     font-weight: 700;
     margin: 10px 0;
   }
+  .ma-home-banner .ma-banner-intro-title {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 10px 0;
+  }
   .ma-home-banner .ma-home-btn-group {
     margin-top: 4.5rem;
   }
@@ -2383,8 +2406,8 @@ footer .footer-bottom {
   /* Widgets Section */
 
   .ma-home-widgets-section {
-    background: url('../../images/wi-bg.png') center bottom no-repeat;
-    background-size: cover;
+    /*background: url('../../images/wi-bg.png') center bottom no-repeat;*/
+    /*background-size: cover;*/
     padding: 5.625rem;
   }
   .ma-home-widgets-section .home-widgets-item {
@@ -2765,4 +2788,38 @@ footer .footer-bottom {
     width: 100%;
     justify-content: flex-end;
     text-align: right;
+}
+
+
+.ma-widgets-banner {
+  background: url('../../images/widgets2/banner.png') center no-repeat;
+  background-size: cover;
+  padding: 15rem 0 7.75rem;
+}
+.ma-widgets-banner .ma-banner-section-title {
+  color: #fff;
+  font-size: 2.625rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.ma-banner-section-description {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.ma-widgets-section {
+  padding: 5.25rem 0 5rem;
+}
+.ma-widgets-section .section-top {
+  margin-bottom: 3.25rem;
+}
+.ma-widget-section-title {
+  color: #393c3f;
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.ma-widget-section-description {
+  color: #78909c;
+  font-size: 15px;
 }

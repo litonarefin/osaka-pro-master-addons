@@ -52,22 +52,11 @@ class Master_Addons_Main_Site_Video extends Widget_Base{
 
 
 			$this->add_control(
-				'video_section_text',
+				'video_link',
 				[
-					'label' => esc_html__( 'Widgets Button Text', MELA_TD ),
-					'type' => Controls_Manager::TEXT,
-					'label_block' => true,
-					'default' => esc_html__( 'Check all 50+ widgets', MELA_TD ),
-				]
-			);
-
-
-			$this->add_control(
-				'video_section_link',
-				[
-					'label' => __( 'Widgets Button Link', MELA_TD ),
+					'label' => __( 'Video Link', MELA_TD ),
 					'type' => Controls_Manager::URL,
-					'placeholder' => __( 'https://master-addons.com/widgets', MELA_TD ),
+					'placeholder' => __( 'https://www.youtube.com/watch?v=dWvW10QROXI', MELA_TD ),
 					'label_block' => true,
 					'default' => [
 						'url' => '#',
@@ -86,6 +75,9 @@ class Master_Addons_Main_Site_Video extends Widget_Base{
 					],
 				]
 			);
+
+
+			
 
 			$this->add_group_control(
 				Group_Control_Image_Size::get_type(),
@@ -108,11 +100,11 @@ class Master_Addons_Main_Site_Video extends Widget_Base{
 
 
 		// Video Section Button 
-		if( $settings['video_section_link']['is_external'] ) {
+		if( $settings['video_link']['is_external'] ) {
 			$this->add_render_attribute( 'video_section_button', 'target', '_blank' );
 		}
 		
-		if( $settings['video_section_link']['nofollow'] ) {
+		if( $settings['video_link']['nofollow'] ) {
 			$this->add_render_attribute( 'video_section_button', 'rel', 'nofollow' );
 		}
 
@@ -132,7 +124,7 @@ class Master_Addons_Main_Site_Video extends Widget_Base{
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						
+						<img src="<?php echo esc_url($video_section_image['url']); ?>" alt="<?php echo get_post_meta( $video_section_image['id'], '_wp_attachment_image_alt', true);?>">
 					</div>
 					<div class="col-lg-6">
 						<h2 class="ma-section-title white">
@@ -145,7 +137,7 @@ class Master_Addons_Main_Site_Video extends Widget_Base{
 							href="<?php echo esc_url_raw( $settings['video_section_link']['url'] );?>"
 							class="popup-video"
 							<?php echo $this->get_render_attribute_string( 'video_section_button' ); ?>>
-								<img src="<?php echo esc_url($video_section_image['url']); ?>" alt="<?php echo get_post_meta( $video_section_image['id'], '_wp_attachment_image_alt', true);?>">
+								<img src="<?php echo get_template_directory_uri();?>/images/play.png" alt="<?php echo get_post_meta( $video_section_image['id'], '_wp_attachment_image_alt', true);?> Icon Image">
 						</a>
 					</div>
 				</div><!-- /.row -->

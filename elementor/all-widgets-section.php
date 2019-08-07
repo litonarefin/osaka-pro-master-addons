@@ -1,19 +1,17 @@
 <?php
-
 namespace Elementor;
-
-class Master_Addons_Site_Widgets extends Widget_Base{
+class Master_Addons_Main_Site_All_Widgets_Section extends Widget_Base{
 
 	public function get_name(){
-		return "ma-main-widgets";
+		return "ma-site-widgets-section";
 	}
 
 	public function get_title(){
-		return "Main Site: Widgets";
+		return "Main Site: All Widgets Section";
 	}
 
 	public function get_icon() {
-		return 'ma-el-icon eicon-info-box';
+		return 'ma-el-icon eicon-heading';
 	}
 
 	public function get_categories() {
@@ -25,73 +23,44 @@ class Master_Addons_Site_Widgets extends Widget_Base{
 			 * Master Headlines Content Section
 			 */
 			$this->start_controls_section(
-				'ma_el_widgets_content',
+				'ma_el_all_widgets_content',
 				[
-					'label' => esc_html__( 'Widgets Details', MELA_TD ),
+					'label' => esc_html__( 'Heading Title', MELA_TD ),
 				]
 			);
-
 			$this->add_control(
-				'widgets_heading',
+				'ma_el_all_widgets_title',
 				[
-					'label' => esc_html__( 'Heading', MELA_TD ),
+					'label' => esc_html__( 'Title', MELA_TD ),
 					'type' => Controls_Manager::TEXT,
 					'label_block' => true,
-					'default' => esc_html__( 'General', MELA_TD ),
+					'default' => esc_html__( 'Master Addons', MELA_TD ),
 				]
 			);
 
 			$this->add_control(
-				'widgets_sub_heading',
+				'ma_el_all_widgets_subtitle',
 				[
-					'label' => esc_html__( 'Sub Heading', MELA_TD ),
+					'label' => esc_html__( 'Sub Title', MELA_TD ),
 					'type' => Controls_Manager::TEXTAREA,
 					'label_block' => true,
-					'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque similique, totam consequuntur temporibus aspernatur ea vel, quibusdam', MELA_TD ),
+					'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga suscipit quidem dolores beatae atque at voluptas delectus.', MELA_TD ),
 				]
 			);
 
-
-
-			$this->add_control(
-				'widgets_button_text',
-				[
-					'label' => esc_html__( 'All Widgets Text', MELA_TD ),
-					'type' => Controls_Manager::TEXT,
-					'label_block' => true,
-					'default' => esc_html__( 'Check all 50+ widgets', MELA_TD ),
-				]
-			);
+			// $this->end_controls_section();
 
 
 
-			$this->add_control(
-				'widgets_button_link',
-				[
-					'label' => __( 'All Widgets Link', MELA_TD ),
-					'type' => Controls_Manager::URL,
-					'placeholder' => __( 'https://master-addons.com/widgets', MELA_TD ),
-					'label_block' => true,
-					'default' => [
-						'url' => '#',
-						'is_external' => false,
-					],
-				]
-			);
-
-			$this->end_controls_section();
-
-
-
-			/**
-			 * Content Tab: Tabs
-			 */
-			$this->start_controls_section(
-				'section_widgets_tabs',
-				[
-					'label'                 => esc_html__( 'Widgets', MELA_TD )
-				]
-			);
+			// /**
+			//  * Content Tab: Tabs
+			//  */
+			// $this->start_controls_section(
+			// 	'section_widgets_tabs',
+			// 	[
+			// 		'label'                 => esc_html__( 'Widgets', MELA_TD )
+			// 	]
+			// );
 
 			$repeater = new Repeater();
 
@@ -171,39 +140,26 @@ class Master_Addons_Site_Widgets extends Widget_Base{
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		$id_int		= substr( $this->get_id_int(), 0, 3 );
+		$this->add_render_attribute( 'ma_el_site_all_widgets_wrapper', [
+				'class' => ['ma-widgets-section','ma-home-widgets-section','text-center']
+			]
+		);
 
-		$this->add_render_attribute( 'info-service', [
-			'class'                 => 'ma-site-info-service',
-			'id'                    => 'ma-site-info-service-'.esc_attr( $this->get_id() ),
-			'data-info-service-id'     => esc_attr( $this->get_id() )
-		] );
-
-
-		// Widgets Button 
-		if( $settings['widgets_button_link']['is_external'] ) {
-			$this->add_render_attribute( 'widgets_button', 'target', '_blank' );
-		}
-		
-		if( $settings['widgets_button_link']['nofollow'] ) {
-			$this->add_render_attribute( 'widgets_button', 'rel', 'nofollow' );
-		}
-
-			
 		?>
 
-
-			<section class="ma-home-widgets-section text-center">
+			<section <?php echo $this->get_render_attribute_string( 'ma_el_site_all_widgets_wrapper' ); ?>>
 				<div class="container">
-					<h2 class="ma-section-title">
-						<?php echo esc_html($settings['widgets_heading']);?>
-					</h2><!-- /.section-title -->
-					<p class="ma-section-description">
-						<?php echo esc_html($settings['widgets_sub_heading']);?>
-					</p><!-- /.section-description -->
+					<div class="section-top">
+						<h2 class="ma-widget-section-title">
+							<?php echo esc_html( $settings['ma_el_all_widgets_title'] ); ?>
+						</h2>
+						<p class="ma-widget-section-description">
+							<?php echo esc_html( $settings['ma_el_all_widgets_subtitle'] ); ?>
+						</p>
+					</div>
+
 
 					<div class="row">
-
 						<?php foreach( $settings['widgets_tabs'] as $index => $tab ) {
 
 							$tab_count = $index+1;
@@ -221,7 +177,7 @@ class Master_Addons_Site_Widgets extends Widget_Base{
 							}
 											
 						?>
-						
+
 							<div class="col-lg-3 col-md-6">
 								<a href="<?php echo esc_url_raw( $tab['widgets_link']['url'] );?>"
 									<?php echo $this->get_render_attribute_string( 'widget_link' ); ?>>
@@ -236,24 +192,16 @@ class Master_Addons_Site_Widgets extends Widget_Base{
 
 						<?php } ?>
 
+						
 
 					</div><!-- /.row -->
 
-					<div class="btn-container">
-						<a 
-							href="<?php echo esc_url_raw( $settings['widgets_button_link']['url'] );?>"
-							class="ma-home-btn"
-							<?php echo $this->get_render_attribute_string( 'widgets_button' ); ?>>
-								<?php echo esc_html($settings['widgets_button_text']);?>
-						</a>
-					</div><!-- /.btn-container -->
-				</div><!-- /.container -->
-			</section><!-- /.ma-home-widgets-section -->
-
+				</div>
+			</section>			
 
 
 		<?php
 	}
 
 }
-Plugin::instance()->widgets_manager->register_widget_type( new Master_Addons_Site_Widgets );
+Plugin::instance()->widgets_manager->register_widget_type( new Master_Addons_Main_Site_All_Widgets_Section );

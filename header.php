@@ -22,103 +22,49 @@ osaka_light_theme_options();
 
 <body <?php body_class(); ?>>
 
+    <nav class="navbar fixed-top navbar-transparent navbar-expand-md dark bootsnav">
 
-        <?php //osaka_light_brand_logo();?>
-            <!-- <nav class="navbar navbar-expand-md m-0">
-                
-                <?php //osaka_light_brand_logo();?>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fa fa-bars"></span>
+        <div class="container pwpt-navbar-container">      
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-main-menu">
+                    <i class="fa fa-bars"></i>
                 </button>
 
-                <div class="collapse navbar-collapse" id="main-menu">
-                    
-                    <?php
-                      //   $args = array(
-                      //       'theme_location'    => 'main-menu',
-                      //       'depth'             => 2,
-                      //       'container'         => false,
-                      //       'container'         => '',
-                      //       'container_class'   => '',
-                      //       'menu_class'        => 'nav navbar-nav',
-                      //       'walker'            => new osaka_light_Navwalker(),
-                      //       'fallback_cb'       => 'osaka_light_Navwalker::fallback',
-                      //   );
-                      // wp_nav_menu($args);
-                    ?>
+                <?php osaka_light_header_brand_logo();?>
+            </div>
+            <!-- End Header Navigation -->
 
-                </div>
-            </nav> -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-main-menu">                        
+              <?php
+                  $navbar = wp_nav_menu( array(
+                    'theme_location' => 'main-menu',
+                    'container'      => false,
+                    'menu_id'        => 'nav',
+                    'menu_class'     => 'pwpt-navbar-nav',
+                    'echo'           => false,
+                    'before'         => '',
+                    'after'          => '',
+                    'link_before'    => '',
+                    'link_after'     => '',
+                    'depth'          => 0,
+                    'parent_id'      => 'tmMainMenu',
+                    )
+                  );
 
-            <nav class="navbar fixed-top navbar-transparent navbar-expand-md dark bootsnav">
+                  $primary_menu = new rooten_nav_dom($navbar);
+                  echo  $primary_menu->proccess();
 
-                <div class="container pwpt-navbar-container">      
-                    <!-- Start Header Navigation -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-main-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-
-                        <?php osaka_light_brand_logo();?>
-                    </div>
-                    <!-- End Header Navigation -->
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="navbar-main-menu">                        
-
-                      <?php
-
-                          // if(has_nav_menu('main-menu')) {
-                          //     $navbar = wp_nav_menu( array(
-                          //       'theme_location' => 'main-menu',
-                          //       'container'      => false,
-                          //       'items_wrap'     => '<ul id="%1$s" class="%2$s" pwpt-nav>%3$s</ul>',
-                          //       'menu_id'        => 'nav',
-                          //       'menu_class'     => 'pwpt-navbar-nav nav navbar-nav navbar-right',
-                          //       'echo'           => true,
-                          //       'before'         => '',
-                          //       'after'          => '',
-                          //       'link_before'    => '',
-                          //       'link_after'     => '',
-                          //       'depth'          => 0,
-                          //       // 'parent_id'      => 'tmMainMenu',
-                          //       )
-                          //     ); 
-                              
-                          //     $primary_menu = new rooten_nav_dom($navbar);
-                          //     echo  $primary_menu->proccess();
-                          //   }
-
-                          $navbar = wp_nav_menu( array(
-                            'theme_location' => 'main-menu',
-                            'container'      => false,
-                            'menu_id'        => 'nav',
-                            'menu_class'     => 'pwpt-navbar-nav',
-                            'echo'           => false,
-                            'before'         => '',
-                            'after'          => '',
-                            'link_before'    => '',
-                            'link_after'     => '',
-                            'depth'          => 0,
-                            'parent_id'      => 'tmMainMenu',
-                            )
-                          );
-
-                          $primary_menu = new rooten_nav_dom($navbar);
-                          echo  $primary_menu->proccess();
-
-                        ?>
+                ?>
 
 
-                        <!-- </ul> -->
+                <!-- </ul> -->
 
-                    </div><!-- /.navbar-collapse -->
-                </div>   
-            </nav>            
-
-
-
+            </div><!-- /.navbar-collapse -->
+        </div>   
+    </nav>
+    
 <?php osaka_light_header_banner();?>
 
 

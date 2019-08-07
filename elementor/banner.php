@@ -32,6 +32,16 @@ class Master_Addons_Main_Banner extends Widget_Base{
 			);
 
 			$this->add_control(
+				'banner_intro_heading',
+				[
+					'label' => esc_html__( 'Intro Heading', MELA_TD ),
+					'type' => Controls_Manager::TEXT,
+					'label_block' => true,
+					'default' => esc_html__( 'Introducing', MELA_TD ),
+				]
+			);
+
+			$this->add_control(
 				'banner_heading',
 				[
 					'label' => esc_html__( 'Heading', MELA_TD ),
@@ -167,9 +177,14 @@ class Master_Addons_Main_Banner extends Widget_Base{
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-7">
-							<h2 class="ma-banner-title">
+							
+							<h4 class="ma-banner-intro-title">
+								<?php echo esc_html($settings['banner_intro_heading']);?>
+							</h4>
+
+							<h1 class="ma-banner-title">
 								<?php echo esc_html($settings['banner_heading']);?>
-							</h2>
+							</h1>
 							<p>
 								<?php echo esc_html($settings['banner_content']);?>
 							</p>

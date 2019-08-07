@@ -77,17 +77,14 @@ class Master_Addons_Info_Service extends Widget_Base{
 
 			$repeater = new Repeater();
 
-			// $repeater->add_control(
-			// 	'info_service_icon',
-			// 	[
-			// 		'label'                 => esc_html__( 'Service Icon', MELA_TD ),
-			// 		'type'                  => Controls_Manager::ICON,
-			// 		'default'               => 'ti-cup',
-			// 		// 'condition'             => [
-			// 		// 	'accordion_tab_icon_show' => 'yes'
-			// 		// ]
-			// 	]
-			// );
+			$repeater->add_control(
+				'info_service_icon',
+				[
+					'label'                 => esc_html__( 'Service Icon', MELA_TD ),
+					'type'                  => Controls_Manager::ICON,
+					'default'               => 'ti-cup',
+				]
+			);
 
 
 			$repeater->add_control(
@@ -131,7 +128,7 @@ class Master_Addons_Info_Service extends Widget_Base{
 					'label'                 => esc_html__( 'Service Content', MELA_TD ),
 					'type'                  => Controls_Manager::WYSIWYG,
 					'default'               => esc_html__( 'Ut enim ad minim veniam,  perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.', MELA_TD ),
-					'dynamic'               => [ 'active' => true ],
+					// 'dynamic'               => [ 'active' => true ],
 					// 'condition'             => [
 					// 	'content_type'	=> 'content',
 					// ],
@@ -209,7 +206,7 @@ class Master_Addons_Info_Service extends Widget_Base{
 										</h4><!-- /.item-title -->
 
 										<p>
-											<?php echo $tab['info_service_content']; ?>
+											<?php echo do_shortcode( $tab['info_service_content'] );?>
 										</p>
 									</div>
 								</div>

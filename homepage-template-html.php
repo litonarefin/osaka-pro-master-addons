@@ -177,14 +177,14 @@ get_header();
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6">
-				
+				<img src="<?php echo get_template_directory_uri();?>/images/video.png" alt="Icon image">
 			</div>
 			<div class="col-lg-6">
 				<h2 class="ma-section-title white">Watch the Video</h2><!-- /.ma-section-title -->
 				<p class="ma-section-description white">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
 				</p>
-				<a href="#" class="popup-video"><img src="images/play.png" alt="Icon image"></a>
+				<a href="https://www.youtube.com/watch?v=dWvW10QROXI" class="popup-video"><img src="<?php echo get_template_directory_uri();?>/images/play.png" alt="Icon image"></a>
 			</div>
 		</div><!-- /.row -->
 	</div><!-- /.container -->
@@ -313,6 +313,25 @@ get_header();
 	</div><!-- /.container -->	
 </section><!-- /.ma-home-free-trail -->
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
-<?php
-get_footer();
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js">
+	
+</script>
+
+
+<script>
+	jQuery(document).ready(function() {
+		jQuery('.popup-video').magnificPopup({
+	 			disableOn: 700,
+	 			type: 'iframe',
+	 			mainClass: 'mfp-fade',
+	 			removalDelay: 160,
+	 			preloader: false,
+
+	 			fixedContentPos: false
+	 		});
+	});
+</script>
+
+<?php get_footer(); ?>
