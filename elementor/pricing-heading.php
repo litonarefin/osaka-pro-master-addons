@@ -1,13 +1,13 @@
 <?php
 namespace Elementor;
-class Master_Addons_Demo_Heading extends Widget_Base{
+class Master_Addons_Main_Site_Pricing_Heading extends Widget_Base{
 
 	public function get_name(){
-		return "ma-site-section-title";
+		return "ma-site-pricing-heading";
 	}
 
 	public function get_title(){
-		return "Main Site: Section Heading";
+		return "Main Site: Pricing Heading";
 	}
 
 	public function get_icon() {
@@ -23,33 +23,33 @@ class Master_Addons_Demo_Heading extends Widget_Base{
 			 * Master Headlines Content Section
 			 */
 			$this->start_controls_section(
-				'ma_el_heading_content',
+				'ma_el_pricing_heading_content',
 				[
 					'label' => esc_html__( 'Heading Title', MELA_TD ),
 				]
 			);
 			$this->add_control(
-				'ma_el_heading_title',
+				'ma_el_pricing_heading_title',
 				[
 					'label' => esc_html__( 'Title', MELA_TD ),
 					'type' => Controls_Manager::TEXT,
 					'label_block' => true,
-					'default' => esc_html__( 'Master Addons', MELA_TD ),
+					'default' => esc_html__( 'Buy 14 Days Free, No Questions Asked Money back Guarantee', MELA_TD ),
 				]
 			);
 
 			$this->add_control(
-				'ma_el_heading_subtitle',
+				'ma_el_pricing_heading_subtitle',
 				[
 					'label' => esc_html__( 'Sub Title', MELA_TD ),
 					'type' => Controls_Manager::TEXTAREA,
 					'label_block' => true,
-					'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga suscipit quidem dolores beatae atque at voluptas delectus.', MELA_TD ),
+					'default' => esc_html__( 'Simple Pricing, Select Your Appropriate Plan', MELA_TD ),
 				]
 			);
 
 			$this->add_control(
-				'ma_el_heading_alignment',
+				'ma_el_pricing_heading_alignment',
 				[
 					'label' => __( 'Alignment', MELA_TD ),
 					'type' => Controls_Manager::CHOOSE,
@@ -76,7 +76,7 @@ class Master_Addons_Demo_Heading extends Widget_Base{
 			);
 
 			$this->add_control(
-				'ma_el_heading_color',
+				'ma_el_pricing_heading_color',
 				[
 					'label' => __( 'Heading Text Color', MELA_TD ),
 					'type' => Controls_Manager::COLOR,
@@ -88,7 +88,7 @@ class Master_Addons_Demo_Heading extends Widget_Base{
 			);
 
 			$this->add_control(
-				'ma_el_sub_heading_color',
+				'ma_el_sub_pricing_heading_color',
 				[
 					'label' => __( 'Sub Heading Text Color', MELA_TD ),
 					'type' => Controls_Manager::COLOR,
@@ -107,10 +107,10 @@ class Master_Addons_Demo_Heading extends Widget_Base{
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		$this->add_render_attribute( 'ma_el_site_heading_wrapper', [
+		$this->add_render_attribute( 'ma_el_site_pricing_heading_wrapper', [
 				'class' => [ 
-							'ma-site-section-title', 
-							'ma-page-content-section'
+							'page-heading', 
+							'text-center'
 				],
 
 			]
@@ -118,22 +118,26 @@ class Master_Addons_Demo_Heading extends Widget_Base{
 
 		?>
 
-			<section <?php echo $this->get_render_attribute_string( 'ma_el_site_heading_wrapper' ); ?>>
+
+			<section <?php echo $this->get_render_attribute_string( 'ma_el_site_pricing_heading_wrapper' ); ?>>
+				<div class="bottom-arrow"></div><!-- /.bottom-arrow -->
 				<div class="container">
-					<div class="section-top">
-						<h2 class="page-content-section-title">
-							<?php echo esc_html( $settings['ma_el_heading_title'] ); ?>
+					<div class="page-heading-titles">
+						<h3 class="heading-sub-title">
+							<?php echo esc_html( $settings['ma_el_pricing_heading_title'] ); ?>
+						</h3>
+						<h2 class="heading-page-title">
+							<?php echo esc_html( $settings['ma_el_pricing_heading_subtitle'] ); ?>
 						</h2>
-						<p class="page-content-section-description">
-							<?php echo esc_html( $settings['ma_el_heading_subtitle'] ); ?>
-						</p>
-					</div>
-				</div>
-			</section>
+					</div><!-- /.page-heading-titles -->
+				</div><!-- /.container -->
+			</section><!-- /.page-heading -->
+
+
 
 
 		<?php
 	}
 
 }
-Plugin::instance()->widgets_manager->register_widget_type( new Master_Addons_Demo_Heading );
+Plugin::instance()->widgets_manager->register_widget_type( new Master_Addons_Main_Site_Pricing_Heading );

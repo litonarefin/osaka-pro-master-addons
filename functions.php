@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Osaka functions and definitions
  *
@@ -221,6 +222,9 @@ function osaka_light_scripts() {
     wp_enqueue_style( 'animate', OSAKA_LIGHT_CSS . 'animate.css', array(), OSAKA_LIGHT_VER );
 	// wp_enqueue_style( 'osaka-light-header', OSAKA_LIGHT_CSS . 'header.css');
 	wp_enqueue_style( 'osaka-light-megamenu', OSAKA_LIGHT_CSS . 'megamenu.css');
+
+	wp_enqueue_style( 'magnific-popup', OSAKA_LIGHT_CSS . 'magnific-popup.css');
+
 	wp_enqueue_style( 'osaka-light-themes', OSAKA_LIGHT_CSS . 'themes.css');
 	wp_enqueue_style( 'osaka-light-responsive', OSAKA_LIGHT_CSS . 'responsive.css');
 	wp_enqueue_style( 'osaka-light-google-fonts', osaka_light_google_fonts_url());
@@ -228,8 +232,12 @@ function osaka_light_scripts() {
 	
 
 	// JS
+	// wp_enqueue_script( 'jquery-masonry', 'jquery-masonry', array('jquery'), OSAKA_LIGHT_VER, true );
+
 	wp_enqueue_script( 'bootstrap', OSAKA_LIGHT_JS . 'bootstrap.js', array('jquery'), OSAKA_LIGHT_VER, true );
+	wp_enqueue_script( 'magnific-popup', OSAKA_LIGHT_JS . 'jquery.magnific-popup.min.js', array('jquery'), OSAKA_LIGHT_VER, true );
 	wp_enqueue_script( 'osaka-light-main', OSAKA_LIGHT_JS . 'main.js', array('jquery'), '', true );
+	wp_enqueue_script( 'osaka-pricing-table', 'https://checkout.freemius.com/checkout.min.js', array('jquery'), '', true );
 
 
 
@@ -872,7 +880,340 @@ function osaka_pro_custom_icons_controls( $controls_registry ) {
 					'ti-pinterest-alt' => 'pinterest-alt',
 					'ti-themify-logo' => 'themify-logo',
 					'ti-themify-favicon' => 'themify-favicon',
-					'ti-themify-favicon-alt' => 'themify-favicon-alt',																			
+					'ti-themify-favicon-alt' => 'themify-favicon-alt',							
+
+
+
+					// Elementor Icons
+					'eicon-editor-link' => 'eicon-editor-link',
+					'eicon-editor-unlink' => 'eicon-editor-unlink',
+					'eicon-editor-external-link' => 'eicon-editor-external-link',
+					'eicon-editor-close' => 'eicon-editor-close',
+					'eicon-editor-list-ol' => 'eicon-editor-list-ol',
+					'eicon-editor-list-ul' => 'eicon-editor-list-ul',
+					'eicon-editor-bold' => 'eicon-editor-bold',
+					'eicon-editor-italic' => 'eicon-editor-italic',
+					'eicon-editor-underline' => 'eicon-editor-underline',
+					'eicon-editor-paragraph' => 'eicon-editor-paragraph',
+					'eicon-editor-h1' => 'eicon-editor-h1',
+					'eicon-editor-h2' => 'eicon-editor-h2',
+					'eicon-editor-h3' => 'eicon-editor-h3',
+					'eicon-editor-h4' => 'eicon-editor-h4',
+					'eicon-editor-h5' => 'eicon-editor-h5',
+					'eicon-editor-h6' => 'eicon-editor-h6',
+					'eicon-editor-quote' => 'eicon-editor-quote',
+					'eicon-editor-code' => 'eicon-editor-code',
+					'eicon-elementor' => 'eicon-elementor',
+					'eicon-elementor-square' => 'eicon-elementor-square',
+					'eicon-pojome' => 'eicon-pojome',
+					'eicon-plus' => 'eicon-plus',
+					'eicon-menu-bar' => 'eicon-menu-bar',
+					'eicon-apps' => 'eicon-apps',
+					'eicon-accordion' => 'eicon-accordion',
+					'eicon-alert' => 'eicon-alert',
+					'eicon-animation-text' => 'eicon-animation-text',
+					'eicon-animation' => 'eicon-animation',
+					'eicon-banner' => 'eicon-banner',
+					'eicon-blockquote' => 'eicon-blockquote',
+					'eicon-button' => 'eicon-button',
+					'eicon-call-to-action' => 'eicon-call-to-action',
+					'eicon-captcha' => 'eicon-captcha',
+					'eicon-carousel' => 'eicon-carousel',
+					'eicon-checkbox' => 'eicon-checkbox',
+					'eicon-columns' => 'eicon-columns',
+					'eicon-countdown' => 'eicon-countdown',
+					'eicon-counter' => 'eicon-counter',
+					'eicon-date' => 'eicon-date',
+					'eicon-divider-shape' => 'eicon-divider-shape',
+					'eicon-divider' => 'eicon-divider',
+					'eicon-download-button' => 'eicon-download-button',
+					'eicon-dual-button' => 'eicon-dual-button',
+					'eicon-email-field' => 'eicon-email-field',
+					'eicon-facebook-comments' => 'eicon-facebook-comments',
+					'eicon-facebook-like-box' => 'eicon-facebook-like-box',
+					'eicon-form-horizontal' => 'eicon-form-horizontal',
+					'eicon-form-vertical' => 'eicon-form-vertical',
+					'eicon-gallery-grid' => 'eicon-gallery-grid',
+					'eicon-gallery-group' => 'eicon-gallery-group',
+					'eicon-gallery-justified' => 'eicon-gallery-justified',
+					'eicon-gallery-masonry' => 'eicon-gallery-masonry',
+					'eicon-icon-box' => 'eicon-icon-box',
+					'eicon-image-before-after' => 'eicon-image-before-after',
+					'eicon-image-box' => 'eicon-image-box',
+					'eicon-image-hotspot' => 'eicon-image-hotspot',
+					'eicon-image-rollover' => 'eicon-image-rollover',
+					'eicon-info-box' => 'eicon-info-box',
+					'eicon-inner-section' => 'eicon-inner-section',
+					'eicon-mailchimp' => 'eicon-mailchimp',
+					'eicon-menu-card' => 'eicon-menu-card',
+					'eicon-navigation-horizontal' => 'eicon-navigation-horizontal',
+					'eicon-nav-menu' => 'eicon-nav-menu',
+					'eicon-navigation-vertical' => 'eicon-navigation-vertical',
+					'eicon-number-field' => 'eicon-number-field',
+					'eicon-parallax' => 'eicon-parallax',
+					'eicon-php7' => 'eicon-php7',
+					'eicon-post-list' => 'eicon-post-list',
+					'eicon-post-slider' => 'eicon-post-slider',
+					'eicon-post' => 'eicon-post',
+					'eicon-posts-carousel' => 'eicon-posts-carousel',
+					'eicon-posts-grid' => 'eicon-posts-grid',
+					'eicon-posts-group' => 'eicon-posts-group',
+					'eicon-posts-justified' => 'eicon-posts-justified',
+					'eicon-posts-masonry' => 'eicon-posts-masonry',
+					'eicon-posts-ticker' => 'eicon-posts-ticker',
+					'eicon-price-list' => 'eicon-price-list',
+					'eicon-price-table' => 'eicon-price-table',
+					'eicon-radio' => 'eicon-radio',
+					'eicon-rtl' => 'eicon-rtl',
+					'eicon-scroll' => 'eicon-scroll',
+					'eicon-search' => 'eicon-search',
+					'eicon-select' => 'eicon-select',
+					'eicon-share' => 'eicon-share',
+					'eicon-sidebar' => 'eicon-sidebar',
+					'eicon-skill-bar' => 'eicon-skill-bar',
+					'eicon-slider-3d' => 'eicon-slider-3d',
+					'eicon-slider-album' => 'eicon-slider-album',
+					'eicon-slider-device' => 'eicon-slider-device',
+					'eicon-slider-full-screen' => 'eicon-slider-full-screen',
+					'eicon-slider-push' => 'eicon-slider-push',
+					'eicon-slider-vertical' => 'eicon-slider-vertical',
+					'eicon-slider-video' => 'eicon-slider-video',
+					'eicon-slideshow' => 'eicon-slideshow',
+					'eicon-social-icons' => 'eicon-social-icons',
+					'eicon-spacer' => 'eicon-spacer',
+					'eicon-table' => 'eicon-table',
+					'eicon-tabs' => 'eicon-tabs',
+					'eicon-tel-field' => 'eicon-tel-field',
+					'eicon-text-area' => 'eicon-text-area',
+					'eicon-text-field' => 'eicon-text-field',
+					'eicon-thumbnails-down' => 'eicon-thumbnails-down',
+					'eicon-thumbnails-half' => 'eicon-thumbnails-half',
+					'eicon-thumbnails-right' => 'eicon-thumbnails-right',
+					'eicon-time-line' => 'eicon-time-line',
+					'eicon-toggle' => 'eicon-toggle',
+					'eicon-url' => 'eicon-url',
+					'eicon-type-tool' => 'eicon-type-tool',
+					'eicon-wordpress' => 'eicon-wordpress',
+					'eicon-text' => 'eicon-text',
+					'eicon-anchor' => 'eicon-anchor',
+					'eicon-bullet-list' => 'eicon-bullet-list',
+					'eicon-code' => 'eicon-code',
+					'eicon-favorite' => 'eicon-favorite',
+					'eicon-google-maps' => 'eicon-google-maps',
+					'eicon-image' => 'eicon-image',
+					'eicon-photo-library' => 'eicon-photo-library',
+					'eicon-woocommerce' => 'eicon-woocommerce',
+					'eicon-youtube' => 'eicon-youtube',
+					'eicon-flip-box' => 'eicon-flip-box',
+					'eicon-settings' => 'eicon-settings',
+					'eicon-headphones' => 'eicon-headphones',
+					'eicon-testimonial' => 'eicon-testimonial',
+					'eicon-counter-circle' => 'eicon-counter-circle',
+					'eicon-person' => 'eicon-person',
+					'eicon-chevron-right' => 'eicon-chevron-right',
+					'eicon-chevron-left' => 'eicon-chevron-left',
+					'eicon-close' => 'eicon-close',
+					'eicon-file-download' => 'eicon-file-download',
+					'eicon-save' => 'eicon-save',
+					'eicon-zoom-in' => 'eicon-zoom-in',
+					'eicon-shortcode' => 'eicon-shortcode',
+					'eicon-nerd' => 'eicon-nerd',
+					'eicon-device-desktop' => 'eicon-device-desktop',
+					'eicon-device-tablet' => 'eicon-device-tablet',
+					'eicon-device-mobile' => 'eicon-device-mobile',
+					'eicon-document-file' => 'eicon-document-file',
+					'eicon-folder-o' => 'eicon-folder-o',
+					'eicon-hypster' => 'eicon-hypster',
+					'eicon-h-align-left' => 'eicon-h-align-left',
+					'eicon-h-align-right' => 'eicon-h-align-right',
+					'eicon-h-align-center' => 'eicon-h-align-center',
+					'eicon-h-align-stretch' => 'eicon-h-align-stretch',
+					'eicon-v-align-top' => 'eicon-v-align-top',
+					'eicon-v-align-bottom' => 'eicon-v-align-bottom',
+					'eicon-v-align-middle' => 'eicon-v-align-middle',
+					'eicon-v-align-stretch' => 'eicon-v-align-stretch',
+					'eicon-pro-icon' => 'eicon-pro-icon',
+					'eicon-mail' => 'eicon-mail',
+					'eicon-lock-user' => 'eicon-lock-user',
+					'eicon-testimonial-carousel' => 'eicon-testimonial-carousel',
+					'eicon-media-carousel' => 'eicon-media-carousel',
+					'eicon-section' => 'eicon-section',
+					'eicon-column' => 'eicon-column',
+					'eicon-edit' => 'eicon-edit',
+					'eicon-clone' => 'eicon-clone',
+					'eicon-trash' => 'eicon-trash',
+					'eicon-play' => 'eicon-play',
+					'eicon-angle-right' => 'eicon-angle-right',
+					'eicon-angle-left' => 'eicon-angle-left',
+					'eicon-animated-headline' => 'eicon-animated-headline',
+					'eicon-menu-toggle' => 'eicon-menu-toggle',
+					'eicon-fb-embed' => 'eicon-fb-embed',
+					'eicon-fb-feed' => 'eicon-fb-feed',
+					'eicon-twitter-embed' => 'eicon-twitter-embed',
+					'eicon-twitter-feed' => 'eicon-twitter-feed',
+					'eicon-sync' => 'eicon-sync',
+					'eicon-import-export' => 'eicon-import-export',
+					'eicon-check-circle' => 'eicon-check-circle',
+					'eicon-library-save' => 'eicon-library-save',
+					'eicon-library-download' => 'eicon-library-download',
+					'eicon-insert' => 'eicon-insert',
+					'eicon-preview' => 'eicon-preview',
+					'eicon-sort-down' => 'eicon-sort-down',
+					'eicon-sort-up' => 'eicon-sort-up',
+					'eicon-heading' => 'eicon-heading',
+					'eicon-logo' => 'eicon-logo',
+					'eicon-meta-data' => 'eicon-meta-data',
+					'eicon-post-content' => 'eicon-post-content',
+					'eicon-post-excerpt' => 'eicon-post-excerpt',
+					'eicon-post-navigation' => 'eicon-post-navigation',
+					'eicon-yoast' => 'eicon-yoast',
+					'eicon-nerd-chuckle' => 'eicon-nerd-chuckle',
+					'eicon-nerd-wink' => 'eicon-nerd-wink',
+					'eicon-comments' => 'eicon-comments',
+					'eicon-download-circle-o' => 'eicon-download-circle-o',
+					'eicon-library-upload' => 'eicon-library-upload',
+					'eicon-save-o' => 'eicon-save-o',
+					'eicon-upload-circle-o' => 'eicon-upload-circle-o',
+					'eicon-ellipsis-h' => 'eicon-ellipsis-h',
+					'eicon-ellipsis-v' => 'eicon-ellipsis-v',
+					'eicon-arrow-left' => 'eicon-arrow-left',
+					'eicon-arrow-right' => 'eicon-arrow-right',
+					'eicon-arrow-up' => 'eicon-arrow-up',
+					'eicon-arrow-down' => 'eicon-arrow-down',
+					'eicon-play-o' => 'eicon-play-o',
+					'eicon-archive-posts' => 'eicon-archive-posts',
+					'eicon-archive-title' => 'eicon-archive-title',
+					'eicon-featured-image' => 'eicon-featured-image',
+					'eicon-post-info' => 'eicon-post-info',
+					'eicon-post-title' => 'eicon-post-title',
+					'eicon-site-logo' => 'eicon-site-logo',
+					'eicon-site-search' => 'eicon-site-search',
+					'eicon-site-title' => 'eicon-site-title',
+					'eicon-plus-square' => 'eicon-plus-square',
+					'eicon-minus-square' => 'eicon-minus-square',
+					'eicon-cloud-check' => 'eicon-cloud-check',
+					'eicon-drag-n-drop' => 'eicon-drag-n-drop',
+					'eicon-welcome' => 'eicon-welcome',
+					'eicon-handle' => 'eicon-handle',
+					'eicon-cart' => 'eicon-cart',
+					'eicon-product-add-to-cart' => 'eicon-product-add-to-cart',
+					'eicon-product-breadcrumbs' => 'eicon-product-breadcrumbs',
+					'eicon-product-categories' => 'eicon-product-categories',
+					'eicon-product-description' => 'eicon-product-description',
+					'eicon-product-images' => 'eicon-product-images',
+					'eicon-product-info' => 'eicon-product-info',
+					'eicon-product-meta' => 'eicon-product-meta',
+					'eicon-product-pages' => 'eicon-product-pages',
+					'eicon-product-price' => 'eicon-product-price',
+					'eicon-product-rating' => 'eicon-product-rating',
+					'eicon-product-related' => 'eicon-product-related',
+					'eicon-product-stock' => 'eicon-product-stock',
+					'eicon-product-tabs' => 'eicon-product-tabs',
+					'eicon-product-title' => 'eicon-product-title',
+					'eicon-product-upsell' => 'eicon-product-upsell',
+					'eicon-products' => 'eicon-products',
+					'eicon-bag-light' => 'eicon-bag-light',
+					'eicon-bag-medium' => 'eicon-bag-medium',
+					'eicon-bag-solid' => 'eicon-bag-solid',
+					'eicon-basket-light' => 'eicon-basket-light',
+					'eicon-basket-medium' => 'eicon-basket-medium',
+					'eicon-basket-solid' => 'eicon-basket-solid',
+					'eicon-cart-light' => 'eicon-cart-light',
+					'eicon-cart-medium' => 'eicon-cart-medium',
+					'eicon-cart-solid' => 'eicon-cart-solid',
+					'eicon-exchange' => 'eicon-exchange',
+					'eicon-eye' => 'eicon-eye',
+					'eicon-device-laptop' => 'eicon-device-laptop',
+					'eicon-collapse' => 'eicon-collapse',
+					'eicon-expand' => 'eicon-expand',
+					'eicon-navigator' => 'eicon-navigator',
+					'eicon-plug' => 'eicon-plug',
+					'eicon-dashboard' => 'eicon-dashboard',
+					'eicon-typography' => 'eicon-typography',
+					'eicon-info-circle-o' => 'eicon-info-circle-o',
+					'eicon-integration' => 'eicon-integration',
+					'eicon-plus-circle-o' => 'eicon-plus-circle-o',
+					'eicon-rating' => 'eicon-rating',
+					'eicon-review' => 'eicon-review',
+					'eicon-tools' => 'eicon-tools',
+					'eicon-loading' => 'eicon-loading',
+					'eicon-sitemap' => 'eicon-sitemap',
+					'eicon-click' => 'eicon-click',
+					'eicon-clock' => 'eicon-clock',
+					'eicon-library-open' => 'eicon-library-open',
+					'eicon-warning' => 'eicon-warning',
+					'eicon-flow' => 'eicon-flow',
+					'eicon-cursor-move' => 'eicon-cursor-move',
+					'eicon-arrow-circle-left' => 'eicon-arrow-circle-left',
+					'eicon-flash' => 'eicon-flash',
+					'eicon-redo' => 'eicon-redo',
+					'eicon-ban' => 'eicon-ban',
+					'eicon-barcode' => 'eicon-barcode',
+					'eicon-calendar' => 'eicon-calendar',
+					'eicon-caret-left' => 'eicon-caret-left',
+					'eicon-caret-right' => 'eicon-caret-right',
+					'eicon-caret-up' => 'eicon-caret-up',
+					'eicon-chain-broken' => 'eicon-chain-broken',
+					'eicon-check-circle-o' => 'eicon-check-circle-o',
+					'eicon-check' => 'eicon-check',
+					'eicon-chevron-double-left' => 'eicon-chevron-double-left',
+					'eicon-chevron-double-right' => 'eicon-chevron-double-right',
+					'eicon-undo' => 'eicon-undo',
+					'eicon-filter' => 'eicon-filter',
+					'eicon-circle-o' => 'eicon-circle-o',
+					'eicon-circle' => 'eicon-circle',
+					'eicon-clock-o' => 'eicon-clock-o',
+					'eicon-cog' => 'eicon-cog',
+					'eicon-cogs' => 'eicon-cogs',
+					'eicon-commenting-o' => 'eicon-commenting-o',
+					'eicon-copy' => 'eicon-copy',
+					'eicon-database' => 'eicon-database',
+					'eicon-dot-circle-o' => 'eicon-dot-circle-o',
+					'eicon-envelope' => 'eicon-envelope',
+					'eicon-external-link-square' => 'eicon-external-link-square',
+					'eicon-eyedropper' => 'eicon-eyedropper',
+					'eicon-folder' => 'eicon-folder',
+					'eicon-font' => 'eicon-font',
+					'eicon-adjust' => 'eicon-adjust',
+					'eicon-lightbox' => 'eicon-lightbox',
+					'eicon-heart-o' => 'eicon-heart-o',
+					'eicon-history' => 'eicon-history',
+					'eicon-image-bold' => 'eicon-image-bold',
+					'eicon-info-circle' => 'eicon-info-circle',
+					'eicon-link' => 'eicon-link',
+					'eicon-long-arrow-left' => 'eicon-long-arrow-left',
+					'eicon-long-arrow-right' => 'eicon-long-arrow-right',
+					'eicon-caret-down' => 'eicon-caret-down',
+					'eicon-paint-brush' => 'eicon-paint-brush',
+					'eicon-pencil' => 'eicon-pencil',
+					'eicon-plus-circle' => 'eicon-plus-circle',
+					'eicon-zoom-in-bold' => 'eicon-zoom-in-bold',
+					'eicon-sort-amount-desc' => 'eicon-sort-amount-desc',
+					'eicon-sign-out' => 'eicon-sign-out',
+					'eicon-spinner' => 'eicon-spinner',
+					'eicon-square' => 'eicon-square',
+					'eicon-star-o' => 'eicon-star-o',
+					'eicon-star' => 'eicon-star',
+					'eicon-text-align-justify' => 'eicon-text-align-justify',
+					'eicon-text-align-center' => 'eicon-text-align-center',
+					'eicon-tags' => 'eicon-tags',
+					'eicon-text-align-left' => 'eicon-text-align-left',
+					'eicon-text-align-right' => 'eicon-text-align-right',
+					'eicon-close-circle' => 'eicon-close-circle',
+					'eicon-trash-o' => 'eicon-trash-o',
+					'eicon-font-awesome' => 'eicon-font-awesome',
+					'eicon-user-circle-o' => 'eicon-user-circle-o',
+					'eicon-video-camera' => 'eicon-video-camera',
+					'eicon-heart' => 'eicon-heart',
+					'eicon-wrench' => 'eicon-wrench',
+					'eicon-help' => 'eicon-help',
+					'eicon-help-o' => 'eicon-help-o',
+					'eicon-zoom-out-bold' => 'eicon-zoom-out-bold',
+					'eicon-plus-square-o' => 'eicon-plus-square-o',
+					'eicon-minus-square-o' => 'eicon-minus-square-o',
+					'eicon-minus-circle' => 'eicon-minus-circle',
+					'eicon-minus-circle-o' => 'eicon-minus-circle-o',
+					'eicon-code-bold' => 'eicon-code-bold',												
 
 
 		),
@@ -889,3 +1230,271 @@ add_action( 'elementor/controls/controls_registered', 'osaka_pro_custom_icons_co
 remove_filter( 'the_content', 'wpautop' );
 // OR
 remove_filter( 'the_excerpt', 'wpautop' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Add custom controls to the Page Settings inside the Elementor Global Options.
+
+// Top of section
+if ( ! function_exists( 'th_add_custom_controls_elem_post_settings_top' ) ) {
+    function th_add_custom_controls_elem_post_settings_top(\Elementor\Core\DocumentTypes\Post $page)
+    {
+        
+
+                $page->add_control(
+                    'osaka_pro_transparent_header',
+                    [
+                        'label' => __( 'Transparent Header', 'th-widget-pack' ),
+                        'type' => \Elementor\Controls_Manager::SWITCHER,
+                        'default' => 'Off',
+                        'label_on' => __( 'On', 'th-widget-pack' ),
+                        'label_off' => __( 'Off', 'th-widget-pack' ),
+                        'return_value' => 'on',
+                    ]
+                );
+
+                $page->add_control(
+                    'osaka_pro_header_content_style',
+                    [
+                        'label' => __( 'Transparent Header Content Style', 'th-widget-pack' ),
+                        'type' => \Elementor\Controls_Manager::SELECT,
+                        'label_block' => true,
+                        'default' => 'light',
+                        'options' => [
+                            'light' => __( 'Light', 'th-widget-pack' ),
+                            'dark' => __( 'Dark', 'th-widget-pack' ),
+                        ],
+                        'condition' => [
+                            'osaka_pro_transparent_header' => 'on',
+                        ],
+                    ]
+                );
+
+                $page->add_control(
+                    'osaka_pro_alt_logo',
+                    [
+                        'label' => __( 'Use Alternative Logo', 'th-widget-pack' ),
+                        'description' => __( 'You can upload an alternative logo under Appearance / Customize / Theme Options / Logo / ', 'th-widget-pack' ),
+                        'type' => \Elementor\Controls_Manager::SWITCHER,
+                        'default' => 'Off',
+                        'label_on' => __( 'On', 'th-widget-pack' ),
+                        'label_off' => __( 'Off', 'th-widget-pack' ),
+                        'return_value' => 'on',
+                        'condition' => [
+                            'osaka_pro_transparent_header' => 'on',
+                        ],
+                    ]
+                );
+
+
+                $page->add_control(
+                    'osaka_pro_header_hide_shadow',
+                    [
+                        'label' => __( 'Hide Header Shadow', 'th-widget-pack' ),
+                        'type' => \Elementor\Controls_Manager::SWITCHER,
+                        'label_off' => __( 'No', 'elementor' ),
+                        'label_on' => __( 'Yes', 'elementor' ),
+
+                        'selectors' => [
+                            '{{WRAPPER}} .navbar-default' => 'border: none',
+                        ],
+                    ]
+                );
+
+                $page_title_selector = get_option( 'elementor_page_title_selector' );
+                if ( empty( $page_title_selector ) ) {
+                    $page_title_selector = 'h1.entry-title';
+                }
+
+
+                $page->add_control(
+                    'osaka_pro_page_title_margin',
+                    [
+                        'label' => __( 'Title  Margin', 'th-widget-pack' ),
+                        'type' => \Elementor\Controls_Manager::SLIDER,
+                        'default' => [
+                            'size' => 1,
+                        ],
+                        'range' => [
+                            'px' => [
+                                'min' => 0,
+                                'max' => 1000,
+                                'step' => 5,
+                            ],
+                            '%' => [
+                                'min' => 0,
+                                'max' => 100,
+                            ],
+                        ],
+                        'size_units' => [ 'px', '%' ],
+                        'selectors' => [
+                            '{{WRAPPER}} ' . $page_title_selector => 'margin-top: {{SIZE}}{{UNIT}};',
+                        ],
+                    ]
+                );
+            
+
+
+    }
+}
+// Bottom of section
+if ( ! function_exists( 'th_add_custom_controls_elem_post_settings_bottom' ) ) {
+    function th_add_custom_controls_elem_post_settings_bottom( \Elementor\Core\DocumentTypes\Post $page )
+    {
+
+
+                // $page->add_control(
+                //     'osaka_pro_page_layout',
+                //     [
+                //         'label' => __( 'Sidebar', 'th-widget-pack' ),
+                //         'type' => \Elementor\Controls_Manager::CHOOSE,
+                //         'default' => 'full',
+                //         'options' => [
+                //             'left'    => [
+                //                 'title' => __( 'Left', 'th-widget-pack' ),
+                //                 'icon' => 'fa fa-long-arrow-left',
+                //             ],
+                //             'full' => [
+                //                 'title' => __( 'No Sidebar', 'th-widget-pack' ),
+                //                 'icon' => 'fa fa-times',
+                //             ],
+                //             'right' => [
+                //                 'title' => __( 'Right', 'th-widget-pack' ),
+                //                 'icon' => 'fa fa-long-arrow-right',
+                //             ],
+
+                //         ],
+                //         'return_value' => 'yes',
+                //     ]
+                // );
+          
+
+			// $page->add_control(
+			// 	'addon_details_heading',
+			// 	[
+			// 		'label' => esc_html__( 'Heading', MELA_TD ),
+			// 		'type' => \Elementor\Controls_Manager::TEXT,
+			// 		'label_block' => true,
+			// 		'default' => esc_html__( 'Watch the Video', MELA_TD ),
+			// 	]
+			// );
+
+			$page->add_control(
+				'addon_details_sub_heading',
+				[
+					'label' => esc_html__( 'Sub Heading', MELA_TD ),
+					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
+					'default' => esc_html__( 'Progressively customize highly efficient e-markets with user friendly intellectual capital. Dramatically target.', MELA_TD ),
+				]
+			);
+
+
+
+			$page->add_control(
+				'addon_details_video_link',
+				[
+					'label' => __( 'Video Link', MELA_TD ),
+					'type' => \Elementor\Controls_Manager::URL,
+					'placeholder' => __( 'https://www.youtube.com/watch?v=dWvW10QROXI', MELA_TD ),
+					'label_block' => true,
+					'default' => [
+						'url' => '#',
+						'is_external' => false,
+					],
+				]
+			);
+
+
+			$page->add_control(
+				'addon_details_image',
+				[
+					'label' => __( 'Video Thumb Image', MELA_TD ),
+					'type' => \Elementor\Controls_Manager::MEDIA,
+					'default' => [
+						'url' => \Elementor\Utils::get_placeholder_image_src(),
+					],
+				]
+			);
+
+			// $page->add_control(
+			// 	'addon_details_bg_image',
+			// 	[
+			// 		'label' => __( 'Background Image', MELA_TD ),
+			// 		'type' => \Elementor\Controls_Manager::MEDIA,
+			// 		'default' => [
+			// 			'url' => \Elementor\Utils::get_placeholder_image_src(),
+			// 		],
+			// 	]
+			// );
+
+
+    }
+}
+
+// add_action( 'elementor/element/post/document_settings/after_section_start', 'th_add_custom_controls_elem_post_settings_top',10, 2);
+add_action( 'elementor/element/post/document_settings/before_section_end', 'th_add_custom_controls_elem_post_settings_bottom',10, 2);
+
+
+
+
+
+// Elementor Page Settings needs to be synced with Option Tree Settings.
+// Compare and update to stay synced.
+if ( ! function_exists( 'sync_ot_and_elem_page_settings' ) ) {
+    function sync_ot_and_elem_page_settings() {
+        global $post;
+        if(isset($post->ID)){
+            $post_id = $post->ID;
+
+            $page = \Elementor\Plugin::$instance->documents->get( $post_id );
+
+            if ( $page ) {
+
+                $addon_details_heading = $page->get_settings('addon_details_heading');
+                $addon_details_sub_heading = $page->get_settings('addon_details_sub_heading');
+                $elm_hide_title = $page->get_settings('hide_title');
+                $addon_details_video_link = $page->get_settings('addon_details_video_link');
+                $addon_details_image = $page->get_settings('addon_details_image');
+                $addon_details_bg_image = $page->get_settings('addon_details_bg_image');
+
+                // if (empty($addon_details_heading)) {
+                //     $addon_details_heading = 'off';
+                // }
+                // if (empty($elm_hide_title)) {
+                //     $elm_hide_title = 'off';
+                // } else {
+                //     $elm_hide_title = 'on';
+                // }
+
+                update_post_meta($post_id, 'addon_details_heading', $addon_details_heading);
+                update_post_meta($post_id, 'addon_details_sub_heading', $addon_details_sub_heading);
+                update_post_meta($post_id, 'osaka_pro_hide_title', $elm_hide_title); //hide_title
+                update_post_meta($post_id, 'addon_details_video_link', $addon_details_video_link);
+                update_post_meta($post_id, 'addon_details_image', $addon_details_image);
+                update_post_meta($post_id, 'addon_details_bg_image', $addon_details_bg_image);
+
+                //}
+            }
+
+        }
+    }
+}
+
+add_action('admin_head', 'sync_ot_and_elem_page_settings'); // When WP Admin is loaded
+add_action('template_redirect', 'sync_ot_and_elem_page_settings'); // When Pages and posts are loaded
+//add_action( 'elementor/editor/after_save', 'th_update_elem_page_settings_post_meta') ; // When Elementor Editor is saved.

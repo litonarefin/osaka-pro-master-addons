@@ -1,7 +1,7 @@
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div class="post-top">            
-            <?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
+            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
             <div class="post-meta">
 				<?php
 					osaka_light_posted_on();

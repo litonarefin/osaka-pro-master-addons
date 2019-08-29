@@ -167,7 +167,87 @@
 			} catch(e) { }
 		},
 
+        FreemiusPayment: function(){
+
+            var freemiusHandler = FS.Checkout.configure({
+                plugin_id:  '4015',
+                plan_id:    '6729',
+                public_key: 'pk_3c9b5b4e47a06288e3500c7bf812e',
+                image:      'https://master-addons.com/wp-content/uploads/2019/08/master-addons-100x100.png'
+            });
+
+            var plans = {
+                personal:       '6729', 
+                business:       '6730',
+                developer:      '6733'
+            };
+
+            let PurchaseButtonHandler = function (plan, planID){        
+
+                //Annual License
+                jQuery('#yearly-pricing-tab #ma-site-yearly-' + plan).on('click', function (e) {
+
+                    var $this = jQuery(this),
+                        price_id = $this.data('billing_cycle_name'),
+                        licenses = 1,
+                        billing_cycle = 'annual';
+                        freemiusHandler.open({
+                            billing_cycle : billing_cycle,
+                            plan_id : planID,
+                            licenses: jQuery('#' + plan + '-licenses').val(),
+                            // You can consume the response for after purchase logic.
+                            success : function (response) {
+                                // alert(response.user.email);
+                            }
+                        });
+
+                    e.preventDefault();
+                });
+
+                //Lifetime License
+                jQuery('#lifetime-pricing-tab #ma-site-lifetime-' + plan).on('click', function (e) {
+
+                    var $this = jQuery(this),
+                        price_id = $this.data('billing_cycle_name'),
+                        licenses = 1,
+                        billing_cycle = 'lifetime';
+                        freemiusHandler.open({
+                            billing_cycle : billing_cycle,
+                            plan_id : planID,
+                            licenses: jQuery('#' + plan + '-licenses').val(),
+                            // You can consume the response for after purchase logic.
+                            success : function (response) {
+                                // alert(response.user.email);
+                            }
+                        });
+
+                    e.preventDefault();
+                });
+
+                
+            };
+
+            for (var plan in plans) {
+                if (!plans.hasOwnProperty(plan))
+                    continue;
+
+                PurchaseButtonHandler( plan, plans[plan]);
+            }
+
+
+        },
 	
+		// pageSettings: function(newValue) {
+  //     		try {  (function($) {				
+		// 			// function handleMenuItemColor ( newValue ) {
+		// 				console.log( newValue );
+		// 				elementor.reloadPreview();
+		// 			// }
+		//       	})(jQuery);
+		// 	} catch(e) { }
+		// },
+
+		
 		
 	};
 
@@ -188,7 +268,9 @@
 	    Osaka.magnificpopUp();
 	    Osaka.googlemap();
 	    Osaka.selectpicker();
+        Osaka.FreemiusPayment();
 
+		// elementor.settings.page.addChangeCallback( 'menu_item_color', Osaka.pageSettings() );
 
 
 
@@ -241,6 +323,159 @@
       
     // });
 
+
+
+
+    // Page Settings Panel - onchange save and reload elementor window.
+
+    if ( typeof elementor != "undefined" && typeof elementor.settings.page != "undefined") {
+
+        // Page Layout Options
+        elementor.settings.page.addChangeCallback( 'addon_details_heading', function( newValue ) {
+            // Here you can do as you wish with the newValue
+
+            //console.log('PAGE LAYOUT CHANGE.');
+
+            elementor.saver.update( {
+                onSuccess: function() {
+
+                    //console.log('SAVE');
+                    elementor.reloadPreview();
+
+                    elementor.once( 'preview:loaded', function() {
+                        elementor.getPanelView().setPage( 'page_settings' );
+                    } );
+                }
+            } );
+
+            // Start OLD Elementor V 1 Support
+            this.save( function() {
+                elementor.reloadPreview();
+
+                elementor.once( 'preview:loaded', function() {
+                    elementor.getPanelView().setPage( 'page_settings' );
+                } );
+            } );
+            // END OLD SUPPORT
+
+        } );
+
+        // Header Transparency
+        elementor.settings.page.addChangeCallback( 'addon_details_sub_heading', function( newValue ) {
+            // Here you can do as you wish with the newValue
+
+            elementor.saver.update( {
+                onSuccess: function() {
+
+                    //console.log('SAVE');
+                    elementor.reloadPreview();
+
+                    elementor.once( 'preview:loaded', function() {
+                        elementor.getPanelView().setPage( 'page_settings' );
+                    } );
+                }
+            } );
+
+            // Start OLD Elementor V 1 Support
+            this.save( function() {
+                elementor.reloadPreview();
+
+                elementor.once( 'preview:loaded', function() {
+                    elementor.getPanelView().setPage( 'page_settings' );
+                } );
+            } );
+            // END OLD SUPPORT
+
+
+        } );
+
+        // Header Contenet Style
+        elementor.settings.page.addChangeCallback( 'addon_details_video_link', function( newValue ) {
+            // Here you can do as you wish with the newValue
+
+            elementor.saver.update( {
+                onSuccess: function() {
+
+                    //console.log('SAVE');
+                    elementor.reloadPreview();
+
+                    elementor.once( 'preview:loaded', function() {
+                        elementor.getPanelView().setPage( 'page_settings' );
+                    } );
+                }
+            } );
+
+            // Start OLD Elementor V 1 Support
+            this.save( function() {
+                elementor.reloadPreview();
+
+                elementor.once( 'preview:loaded', function() {
+                    elementor.getPanelView().setPage( 'page_settings' );
+                } );
+            } );
+            // END OLD SUPPORT
+
+        } );
+
+        // Thumb Image
+        elementor.settings.page.addChangeCallback( 'addon_details_image', function( newValue ) {
+            // Here you can do as you wish with the newValue
+
+            //console.log('NEW VALUE ALT LOGO '+newValue);
+
+            elementor.saver.update( {
+                onSuccess: function() {
+
+                    //console.log('SAVE');
+                    elementor.reloadPreview();
+
+                    elementor.once( 'preview:loaded', function() {
+                        elementor.getPanelView().setPage( 'page_settings' );
+                    } );
+                }
+            } );
+
+            // Start OLD Elementor V 1 Support
+            this.save( function() {
+                elementor.reloadPreview();
+
+                elementor.once( 'preview:loaded', function() {
+                    elementor.getPanelView().setPage( 'page_settings' );
+                } );
+            } );
+            // END OLD SUPPORT
+        } );
+
+        // Background Image
+        elementor.settings.page.addChangeCallback( 'addon_details_bg_image', function( newValue ) {
+            // Here you can do as you wish with the newValue
+
+            //console.log('NEW VALUE ALT LOGO '+newValue);
+
+            elementor.saver.update( {
+                onSuccess: function() {
+
+                    //console.log('SAVE');
+                    elementor.reloadPreview();
+
+                    elementor.once( 'preview:loaded', function() {
+                        elementor.getPanelView().setPage( 'page_settings' );
+                    } );
+                }
+            } );
+
+            // Start OLD Elementor V 1 Support
+            this.save( function() {
+                elementor.reloadPreview();
+
+                elementor.once( 'preview:loaded', function() {
+                    elementor.getPanelView().setPage( 'page_settings' );
+                } );
+            } );
+            // END OLD SUPPORT
+        } );
+
+    }
 
 
 	      

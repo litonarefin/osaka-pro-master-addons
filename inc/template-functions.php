@@ -203,7 +203,8 @@ function osaka_light_header_banner(){
                     <div class="col-lg-6">
                         <div class="header-texts text-left">
                             <h2 class="header-title">
-                                <?php echo esc_html( get_the_title() ); ?>
+                                <?php //echo esc_html( get_the_title() ); 
+                                osaka_light_breadcrumbs();?>
                             </h2>
                         </div><!-- /.header-texts -->
                     </div>
@@ -260,7 +261,7 @@ function osaka_light_header_brand_logo(){
     if( has_custom_logo() ){ ?>
 
         <a class="navbar-brand" href="<?php echo esc_url(home_url('/'));?>">
-            <img class="logo logo-display" src="http://master-addons.com/wp-content/uploads/2019/06/logo.png" alt="<?php echo esc_attr( get_bloginfo('name') );?>">
+            <img class="logo logo-display" src="https://master-addons.com/wp-content/uploads/2019/06/logo.png" alt="<?php echo esc_attr( get_bloginfo('name') );?>">
 
             <img class="logo logo-page-display" src="<?php echo esc_url( $logo[0] );?>" alt="<?php echo esc_attr( get_bloginfo('name') );?>">
         </a>
