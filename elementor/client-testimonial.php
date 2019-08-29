@@ -200,7 +200,7 @@ class Master_Addons_Main_Site_Testimonial extends Widget_Base{
 
 								<div class="item-details">
 									<div class="avatar">
-										<img class="rounded-circle" src="<?php echo esc_url($tab['main_site_testimonial_image']['url']); ?>" alt="<?php echo get_post_meta( $main_site_testimonial_image['id'], '_wp_attachment_image_alt', true);?>">
+										<img class="rounded-circle" src="<?php echo esc_url($tab['main_site_testimonial_image']['url']); ?>" alt="<?php echo get_post_meta( $tab['main_site_testimonial_image']['id'], '_wp_attachment_image_alt', true);?>">
 									</div><!-- /.avatar -->
 									
 									<h4 class="name">
