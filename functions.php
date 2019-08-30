@@ -1498,3 +1498,16 @@ if ( ! function_exists( 'sync_ot_and_elem_page_settings' ) ) {
 add_action('admin_head', 'sync_ot_and_elem_page_settings'); // When WP Admin is loaded
 add_action('template_redirect', 'sync_ot_and_elem_page_settings'); // When Pages and posts are loaded
 //add_action( 'elementor/editor/after_save', 'th_update_elem_page_settings_post_meta') ; // When Elementor Editor is saved.
+
+
+
+
+
+function osaka_pro_https_for_media( $url ) {
+
+	if ( is_ssl() )
+		$url = str_replace( 'http://', 'https://', $url );
+	return $url;
+
+}
+add_filter( 'wp_get_attachment_url', 'osaka_pro_https_for_media' );
