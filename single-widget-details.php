@@ -37,19 +37,26 @@ $addon_details_bg_image = $page_settings_model->get_settings( 'addon_details_bg_
 					<?php echo $addon_details_sub_heading;?>
 				</p>
 			</div>
-			<div class="col-lg-5">
-				<div class="banner-image-content">
-					<?php if( $addon_details_image['url'] ){ ?>
-						<img src="<?php echo esc_url_raw( $addon_details_image['url'] );?>" alt="<?php echo get_post_meta( $addon_details_image['id'], '_wp_attachment_image_alt', true);?>">
-					<?php } else { ?>
-						<img src="<?php echo get_template_directory_uri();?>/images/page-head.png" alt="<?php echo get_post_meta( $addon_details_image['id'], '_wp_attachment_image_alt', true);?>">
-					<?php } ?>
-					
-					<a href="<?php echo esc_url_raw( $addon_details_video_link['url'] ); ?>" class="popup-video">
-						<span class="dashicons dashicons-admin-collapse"></span>
-					</a>
+
+			<?php if( $addon_details_video_link['url'] !="#" ){ ?>
+
+				<div class="col-lg-5">
+					<div class="banner-image-content">
+						<?php if( $addon_details_image['url'] ){ ?>
+							<img src="<?php echo esc_url_raw( $addon_details_image['url'] );?>" alt="<?php echo get_post_meta( $addon_details_image['id'], '_wp_attachment_image_alt', true);?>">
+						<?php } else { ?>
+							<img src="<?php echo get_template_directory_uri();?>/images/page-head.png" alt="<?php echo get_post_meta( $addon_details_image['id'], '_wp_attachment_image_alt', true);?>">
+						<?php } ?>
+						
+						<a href="<?php echo esc_url_raw( $addon_details_video_link['url'] ); ?>" class="popup-video">
+							<span class="dashicons dashicons-admin-collapse"></span>
+						</a>
+					</div>
 				</div>
-			</div>
+
+			<?php } ?>
+
+
 		</div>
 	</div>
 </section>
