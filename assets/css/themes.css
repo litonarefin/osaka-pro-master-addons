@@ -963,7 +963,7 @@ article .entry-content p {
 }
 .blog-single article .entry-content h1, .blog-single article .entry-content h2, .blog-single article .entry-content h3, .blog-single article .entry-content h4, .blog-single article .entry-content h5, .blog-single article .entry-content h6 {
   font-weight: 300;
-  margin: 1.8755em 0; 
+  margin: .6em 0; 
 }
 .blog-single article .entry-content p {
   line-height: 1.65;
@@ -971,7 +971,7 @@ article .entry-content p {
 }
 
 article ul, article ol, .comments ul, .comments ol {
-  margin: 4em 0; 
+  margin: 2em 0; 
 }
 article ul li, article ol li, .comments ul li, .comments ol li {
   color: #8c8c8c;
