@@ -1386,20 +1386,20 @@ if ( ! function_exists( 'th_add_custom_controls_elem_post_settings_bottom' ) ) {
 			// $page->add_control(
 			// 	'addon_details_heading',
 			// 	[
-			// 		'label' => esc_html__( 'Heading', MELA_TD ),
+			// 		'label' => esc_html__( 'Heading', 'osaka-pro' ),
 			// 		'type' => \Elementor\Controls_Manager::TEXT,
 			// 		'label_block' => true,
-			// 		'default' => esc_html__( 'Watch the Video', MELA_TD ),
+			// 		'default' => esc_html__( 'Watch the Video', 'osaka-pro' ),
 			// 	]
 			// );
 
 			$page->add_control(
 				'addon_details_sub_heading',
 				[
-					'label' => esc_html__( 'Sub Heading', MELA_TD ),
+					'label' => esc_html__( 'Sub Heading', 'osaka-pro' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
 					'label_block' => true,
-					'default' => esc_html__( 'Progressively customize highly efficient e-markets with user friendly intellectual capital. Dramatically target.', MELA_TD ),
+					'default' => esc_html__( 'Progressively customize highly efficient e-markets with user friendly intellectual capital. Dramatically target.', 'osaka-pro' ),
 				]
 			);
 
@@ -1408,9 +1408,9 @@ if ( ! function_exists( 'th_add_custom_controls_elem_post_settings_bottom' ) ) {
 			$page->add_control(
 				'addon_details_video_link',
 				[
-					'label' => __( 'Video Link', MELA_TD ),
+					'label' => __( 'Video Link', 'osaka-pro' ),
 					'type' => \Elementor\Controls_Manager::URL,
-					'placeholder' => __( 'https://www.youtube.com/watch?v=dWvW10QROXI', MELA_TD ),
+					'placeholder' => __( 'https://www.youtube.com/watch?v=dWvW10QROXI', 'osaka-pro' ),
 					'label_block' => true,
 					'default' => [
 						'url' => '#',
@@ -1423,7 +1423,7 @@ if ( ! function_exists( 'th_add_custom_controls_elem_post_settings_bottom' ) ) {
 			$page->add_control(
 				'addon_details_image',
 				[
-					'label' => __( 'Video Thumb Image', MELA_TD ),
+					'label' => __( 'Video Thumb Image', 'osaka-pro' ),
 					'type' => \Elementor\Controls_Manager::MEDIA,
 					'default' => [
 						'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -1434,7 +1434,7 @@ if ( ! function_exists( 'th_add_custom_controls_elem_post_settings_bottom' ) ) {
 			// $page->add_control(
 			// 	'addon_details_bg_image',
 			// 	[
-			// 		'label' => __( 'Background Image', MELA_TD ),
+			// 		'label' => __( 'Background Image', 'osaka-pro' ),
 			// 		'type' => \Elementor\Controls_Manager::MEDIA,
 			// 		'default' => [
 			// 			'url' => \Elementor\Utils::get_placeholder_image_src(),
