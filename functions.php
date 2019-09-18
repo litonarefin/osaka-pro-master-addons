@@ -1447,8 +1447,8 @@ if ( ! function_exists( 'th_add_custom_controls_elem_post_settings_bottom' ) ) {
     }
 }
 
-// add_action( 'elementor/element/post/document_settings/after_section_start', 'th_add_custom_controls_elem_post_settings_top',10, 2);
-add_action( 'elementor/element/post/document_settings/before_section_end', 'th_add_custom_controls_elem_post_settings_bottom',10, 2);
+// add_action( 'elementor/element/wp-post/document_settings/after_section_start', 'th_add_custom_controls_elem_post_settings_top',10, 2);
+add_action( 'elementor/element/wp-post/document_settings/before_section_end', 'th_add_custom_controls_elem_post_settings_bottom',10, 2);
 
 
 
