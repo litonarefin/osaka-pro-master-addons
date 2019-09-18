@@ -21,7 +21,13 @@ function osaka_light_register_required_plugins() {
 	    		'slug'      		 => esc_html__( 'master-addons', 'osaka-light' ),
 	    		'required'  		 => false,
 	    		'force_activation'   => false,
-    		)
+    		),
+        array(
+                'name'               => esc_html__( 'Redux Framework', 'osaka' ),
+                'slug'               => esc_html__( 'redux-framework', 'osaka' ),
+                'required'           => true,
+                'force_activation'   => false,
+            ),        
 
     );
 
