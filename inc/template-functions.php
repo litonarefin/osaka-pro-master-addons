@@ -203,8 +203,8 @@ function osaka_light_header_banner(){
                     <div class="col-lg-6">
                         <div class="header-texts text-left">
                             <h2 class="header-title">
-                                <?php //echo esc_html( get_the_title() ); 
-                                osaka_light_breadcrumbs();?>
+                                <?php echo esc_html( get_the_title() ); 
+                                //osaka_light_breadcrumbs();?>
                             </h2>
                         </div><!-- /.header-texts -->
                     </div>
@@ -429,25 +429,27 @@ add_action('wp_enqueue_scripts', 'osaka_pro_dequeue_scripts', 100);
 function osaka_pro_dequeue_scripts(){
     global $osaka_options;
 
-    //Styles
-    foreach ( $osaka_options['osaka_dequeue_styles'] as $style) {
-        $style_parts = explode(", ", $style);
-        $li_styles = $style_parts[0];
+    
+    if(isset($osaka_options['osaka_dequeue_styles'])){
 
-        wp_deregister_style( $li_styles );
-        wp_dequeue_style( $li_styles );
+        //Styles
+        foreach ( $osaka_options['osaka_dequeue_styles'] as $style) {
+            $style_parts = explode(", ", $style);
+            $li_styles = $style_parts[0];
+
+            wp_deregister_style( $li_styles );
+            wp_dequeue_style( $li_styles );
+        }
+
+        //Scripts
+        foreach ( $osaka_options['osaka_dequeue_scripts'] as $script ) {
+            $script_parts = explode(", ", $script);
+            $li_scripts = $script_parts[0];
+
+            wp_deregister_script( $li_scripts );
+            wp_dequeue_script( $li_scripts );
+        }        
     }
-
-    //Scripts
-    foreach ( $osaka_options['osaka_dequeue_scripts'] as $script ) {
-        $script_parts = explode(", ", $script);
-        $li_scripts = $script_parts[0];
-
-        wp_deregister_script( $li_scripts );
-        wp_dequeue_script( $li_scripts );
-    }
-
-
 
 }
 
@@ -457,24 +459,28 @@ add_action('wp_print_styles', 'osaka_pro_dequeue_print_styles', 100);
 function osaka_pro_dequeue_print_styles() {
     
     global $osaka_options;
+    
+    if(isset($osaka_options['osaka_dequeue_styles'])){
 
-    //Styles
-    foreach ( $osaka_options['osaka_dequeue_styles'] as $style) {
-        $style_parts = explode(", ", $style);
-        $li_styles = $style_parts[0];
+        //Styles
+        foreach ( $osaka_options['osaka_dequeue_styles'] as $style) {
+            $style_parts = explode(", ", $style);
+            $li_styles = $style_parts[0];
 
-        wp_deregister_style( $li_styles );
-        wp_dequeue_style( $li_styles );
+            wp_deregister_style( $li_styles );
+            wp_dequeue_style( $li_styles );
+        }
+
+        //Scripts
+        foreach ( $osaka_options['osaka_dequeue_scripts'] as $script) {
+            $script_parts = explode(", ", $script);
+            $li_scripts = $script_parts[0];
+
+            wp_deregister_script( $li_scripts );
+            wp_dequeue_script( $li_scripts );
+        }        
     }
 
-    //Scripts
-    foreach ( $osaka_options['osaka_dequeue_scripts'] as $script) {
-        $script_parts = explode(", ", $script);
-        $li_scripts = $script_parts[0];
-
-        wp_deregister_script( $li_scripts );
-        wp_dequeue_script( $li_scripts );
-    }
     
 }
 
