@@ -90,6 +90,8 @@ class Master_Addons_Main_Site_All_Widgets_Section extends Widget_Base{
 			);			
 
 			
+
+
 			// $repeater->add_control(
 			// 	'widgets_content',
 			// 	[
@@ -117,6 +119,48 @@ class Master_Addons_Main_Site_All_Widgets_Section extends Widget_Base{
 				]
 			);
 
+
+			$repeater->add_control(
+				'ma_el_widgets_ribbon',
+				[
+					'label'    => __( 'Ribbon', MELA_TD ),
+					'type'     => Controls_Manager::SELECT,
+					'default'  => '',
+					'options'  => [
+						''           	=> __( 'None', MELA_TD ),
+						'new'           => __( 'New', MELA_TD ),
+						'popular'       => __( 'Popular', MELA_TD ),
+						'free'          => __( 'Free', MELA_TD ),
+						'pro'           => __( 'Pro', MELA_TD ),
+						'sale'          => __( 'Sale', MELA_TD ),
+						'discount'      => __( 'Discount', MELA_TD ),
+						'added'         => __( 'Added', MELA_TD ),
+						'updated'       => __( 'Updated', MELA_TD ),
+						'changed'       => __( 'Changed', MELA_TD ),
+						'fixed'         => __( 'Fixed', MELA_TD ),
+						'removed'       => __( 'Removed', MELA_TD ),
+						'note'          => __( 'Note', MELA_TD ),
+					],
+				]
+			);
+
+			$repeater->add_control(
+				'ma_el_widgets_ribbon_discount',
+				[
+					'type'          => Controls_Manager::TEXT,
+					'label'         => __( 'Discount', MELA_TD ),
+					'default'       => __( '30% Off', MELA_TD ),
+					'condition'     => [
+						'ma_el_widgets_ribbon' => ['discount','sale']
+					],
+					'selectors'		=>[
+						'{{WRAPPER}} {{CURRENT_ITEM}} .ma-home-widgets-section [class*="col"].badge-discount .home-widgets-item:before' => 'content: "{{VALUE}}";',
+						'{{WRAPPER}} {{CURRENT_ITEM}} .ma-home-widgets-section [class*="col"].badge-sale .home-widgets-item:before' => 'content: "{{VALUE}}";'
+					]
+				]
+			);
+
+
 			$this->add_control(
 				'widgets_tabs',
 				[
@@ -130,6 +174,7 @@ class Master_Addons_Main_Site_All_Widgets_Section extends Widget_Base{
 					'title_field'           => '{{widgets_title}}',
 				]
 			);
+
 
 			$this->end_controls_section();
 
@@ -178,7 +223,7 @@ class Master_Addons_Main_Site_All_Widgets_Section extends Widget_Base{
 											
 						?>
 
-							<div class="col-lg-3 col-md-6">
+							<div class="col-lg-3 col-md-6 badge-<?php echo $tab['ma_el_widgets_ribbon']; ?>">
 								<a href="<?php echo esc_url_raw( $tab['widgets_link']['url'] );?>"
 									<?php echo $this->get_render_attribute_string( 'widget_link' ); ?>>
 									<div class="home-widgets-item">				

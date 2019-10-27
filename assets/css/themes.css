@@ -3113,3 +3113,82 @@ a:not([href]).price-table-btn:hover {
         top: 100px;
     }
 }
+
+
+.navbar.dark.sticky .pwpt-navbar-nav li li a {
+  color: #393c3f;
+}
+
+.ma-home-widgets-section [class*="col"] .home-widgets-item {
+  overflow: hidden;
+  position: relative;
+}
+.ma-home-widgets-section [class*="col"] .home-widgets-item:before {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px;
+  position: absolute;
+  right: -70px;
+  top: 20px;
+  width: 200px;
+  height: 22px;
+  text-align: center;
+
+  transform: rotate(45deg);
+}
+.ma-home-widgets-section [class*="col"].badge-popular .home-widgets-item:before {
+  content: 'Popular';
+  background-image: -moz-linear-gradient( 0deg, rgb(100,61,243) 0%, rgb(155,63,213) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(100,61,243) 0%, rgb(155,63,213) 100%);
+  background-image: -ms-linear-gradient( 0deg, rgb(100,61,243) 0%, rgb(155,63,213) 100%);
+}
+.ma-home-widgets-section [class*="col"].badge-new .home-widgets-item:before {
+  content: 'New';
+  background-color: red;
+}
+.ma-home-widgets-section [class*="col"].badge-free .home-widgets-item:before {
+  content: 'Free';
+  background-color: #13B015;
+}
+.ma-home-widgets-section [class*="col"].badge-pro .home-widgets-item:before {
+  content: 'Pro';
+  background-color: #B013AE;
+}
+.ma-home-widgets-section [class*="col"].badge-discount .home-widgets-item:before {
+  content: "30% Off";
+  background-color: #4b00e7;
+}
+.ma-home-widgets-section [class*="col"].badge-sale .home-widgets-item:before {
+  content: 'Sale';
+  background-color: #1345B0;
+}
+.ma-home-widgets-section [class*="col"].badge-added .home-widgets-item:before {
+  content: 'Added';
+  background-color: #2ed573;
+}
+.ma-home-widgets-section [class*="col"].badge-updated .home-widgets-item:before {
+  content: 'Updated';
+  background-color: #1e90ff;
+}
+.ma-home-widgets-section [class*="col"].badge-changed .home-widgets-item:before {
+  content: 'Changed';
+  background-color: #ffa502;
+}
+.ma-home-widgets-section [class*="col"].badge-fixed .home-widgets-item:before {
+  content: 'Fixed';
+  background-color: #f0506e;
+}
+.ma-home-widgets-section [class*="col"].badge-removed .home-widgets-item:before {
+  content: 'Removed';
+  background-color: #ff4757;
+}
+.ma-home-widgets-section [class*="col"].badge-note .home-widgets-item:before {
+  content: 'Note';
+  background-color: #cce5ff;
+}
+
