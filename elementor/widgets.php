@@ -9,7 +9,7 @@ class Master_Addons_Site_Widgets extends Widget_Base{
 	}
 
 	public function get_title(){
-		return "Main Site: Widgets";
+		return "Main Site: Home Widgets";
 	}
 
 	public function get_icon() {
@@ -239,14 +239,18 @@ class Master_Addons_Site_Widgets extends Widget_Base{
 
 					</div><!-- /.row -->
 
-					<div class="btn-container">
-						<a 
-							href="<?php echo esc_url_raw( $settings['widgets_button_link']['url'] );?>"
-							class="ma-home-btn"
-							<?php echo $this->get_render_attribute_string( 'widgets_button' ); ?>>
-								<?php echo esc_html($settings['widgets_button_text']);?>
-						</a>
-					</div><!-- /.btn-container -->
+
+					<?php if( $settings['widgets_button_link']['url'] !="" && $settings['widgets_button_text'] !=""  ){ ?>
+						<div class="btn-container">
+							<a 
+								href="<?php echo esc_url_raw( $settings['widgets_button_link']['url'] );?>"
+								class="ma-home-btn"
+								<?php echo $this->get_render_attribute_string( 'widgets_button' ); ?>>
+									<?php echo esc_html($settings['widgets_button_text']);?>
+							</a>
+						</div><!-- /.btn-container -->
+					<?php } ?>
+					
 				</div><!-- /.container -->
 			</section><!-- /.ma-home-widgets-section -->
 
